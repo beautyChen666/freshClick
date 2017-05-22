@@ -1,2 +1,0 @@
-# freshClick
-for ionic app
