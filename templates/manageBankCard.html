@@ -1,0 +1,51 @@
+<ion-view view-title="银行账户管理">
+    <ion-nav-bar class="bar-stable">
+        <ion-nav-back-button>
+            Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>
+        <div>
+            <label class="item item-input">
+                <p class="mustWrap">
+                    <span>银行户名</span>
+                    <span><img src="img/icons/start.png"/></span>
+                </p>
+                <input type="text" id="userNameM" ng-keyup="nonBlankCheck1()" ng-value="bankDetail.bankCardName"/>
+            </label>
+            <label class="item item-input">
+                <p class="mustWrap">
+                    <span>银行名称</span>
+                </p>
+                <input type="text" id="bankName" ng-value="bankDetail.bankName"/>
+            </label>
+            <label class="item item-input">
+                <p class="mustWrap">
+                    <span>银行代号</span>
+                    <span><img src="img/icons/start.png"/></span>
+                </p>
+                <input type="text" id="bankCode" ng-keyup="nonBlankCheck2() " ng-value="bankDetail.bankCode"/>
+            </label>
+            <label class="item item-input">
+                <p class="mustWrap">
+                    <span>银行账号</span>
+                    <span><img src="img/icons/start.png"/></span>
+                </p>
+                <input type="text" id="bankNum" ng-keyup="nonBlankCheck3()" ng-value="bankDetail.bankCardCode"/>
+            </label>
+            <label class="item item-input">
+                <p class="mustWrap">
+                    <span>银行账号重复</span>
+                    <span><img src="img/icons/start.png"/></span>
+                </p>
+                <input type="text" id="repeatBankNum"  ng-keyup="nonBlankCheck4()" ng-value="bankDetail.bankCardCode"/>
+            </label>
+        </div>
+        <div class="comBankCard">
+            <button ng-click="subBankCard()"
+                    ng-disabled="canClick1||canClick2||canClick3||canClick4"
+            >确认
+            </button>
+        </div>
+    </ion-content>
+</ion-view>

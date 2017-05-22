@@ -1,0 +1,75 @@
+<ion-view view-title="我的店铺主页">
+    <ion-nav-bar class="bar-stable" style="visibility: hidden">
+        <ion-nav-back-button class="button-clear">
+            Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-side-menus delegate-handle="isSideOpen">
+        <ion-side-menu side="left" class="onesInformation" >
+            <div class="onesInformationPhoto">
+                <div><img src="{{initSrc || img/photo/ben.png}}"></div>
+                <p>{{userNikname}}</p>
+                <span class="setup" ng-click="toSetUp()"><img src="img/shopHome/ion_setup.png" alt=""></span>
+            </div>
+            <ul class="onesInformationList">
+                <li><a ng-click="goOnesInfo()">个人信息</a></li>
+                <li><a type="button" ng-click="goChangePwd()" href="#/inputPwd">密码修改</a></li>
+                <li><a href="#/manageBankCard">银行账户管理</a></li>
+                <li><a>版本信息</a></li>
+            </ul>
+            <div class="onesExitLogin">
+                <a href="#/login" ng-click="logOut()">退出登录</a>
+            </div>
+        </ion-side-menu>
+        <ion-side-menu-content drag-content="true">
+            <header class="shopHeader">
+                <p class="fl inforIcon"><a menu-toggle="left"><img src="img/goOpenShop/xiaotubiao.png"/> </a></p>
+                <p class="fr titleLogo"><img src="img/login/freshClick@3x.png"/></p>
+            </header>
+
+            <div class="myShopContent">
+                <div class="myShopConH">
+                   <p>我的店铺</p>
+                </div>
+                <!--需要滚动的地方开始-->
+                <ion-scroll class="myScorllShop" scrollbar-y="true">
+                    <ion-refresher on-refresh="doRefresh()" pulling-text="下拉刷新"></ion-refresher>
+                    <div class="myShopList">
+                        <!--<ion-list>-->
+                        <dl class="myShopAbt" ng-repeat="myShop in myShops" type="item-text-wrap">
+                            <dt class="myShopLeft fl">
+                                <img ng-src="{{myShop.storeLogo}}">
+                            </dt>
+                            <dd class="myShopMid fl">
+                                <p class="shopName ellipsis-1l">{{myShop.storeName}}</p>
+                                <p class="shopPopularity">
+                                    <span class="eyeBg fl">浏览量:{{myShop.pageView||0}}</span>
+                                    <span class="msgBg fl">私信:{{myShop.msgNum||0}}</span>
+                                </p>
+                                <p class="ellipsis-3l">店铺简介:{{myShop.storeDetail}}</p>
+                            </dd>
+                            <dd class="myShopRight fl">
+                                <a ng-click="goThisShopHome()"><img ng-src="img/myShop/fill28@3x.png"/></a>
+                            </dd>
+                        </dl>
+                        <!--</ion-list>-->
+                    </div>
+
+
+                    <div class="myShopAddShop">
+                        <dl class="myShopAddOne">
+                            <p>添加店铺</p>
+                            <a type="button" ng-click="openShop()">
+                                <img src="img/myShop/group@3x.png"/>
+                            </a>
+                        </dl>
+                    </div>
+                    <ion-infinite-scroll ng-if="moreDataCanBeLoaded" on-infinite="loadMoreShop()" distance="1%"
+                                         immediate-check="false"></ion-infinite-scroll>
+                </ion-scroll>
+                <!--需要滚动的地方结束-->
+
+            </div>
+        </ion-side-menu-content>
+    </ion-side-menus>
+</ion-view>

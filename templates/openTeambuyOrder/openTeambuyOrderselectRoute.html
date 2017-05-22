@@ -1,0 +1,47 @@
+<ion-view view-title="店铺路线">
+    <ion-nav-bar class="bar-stable">
+        <ion-nav-back-button>
+        </ion-nav-back-button>
+        <ion-nav-buttons side="right">
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <div class="allDistributionSites">
+        <div class="allDistributionSitesHeader">
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <i class="icon ion-search placeholder-icon Big"></i>
+                    <input type="text" id="searchAllSites" placeholder="请输入路线名来查询..." ng-keyup="goSearchOrders()" ng-model="nowSearchOrders">
+                </label>
+            </div>
+        </div>
+        <ion-content class="selectRouteCont allDistributionSitesCont">
+            <ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>
+            <div class="list">
+                <label class="item item-radio" ng-repeat="data in openTeambuyOrderselectRouteDatas track by $index">
+                    <input type="radio" name="group" value="go"  ng-click="goRadioActive($event,$index)">
+                    <div class="item-content dlb">
+                        <p class="row">
+                            <span class="col">路线名称:{{data.routeName}}</span>
+                        </p>
+                        <p class="row">
+                            <span class="col">起送金额:{{data.minAmount}}</span>
+                        </p>
+                        <p class="row">
+                             <span class="col">配送点个数:{{data.countAllocation}}</span>
+                        </p>
+                        <p class="row">
+                            <span class="col">最远送货距离:{{data.maxDistance}}</span>
+                        </p>
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+            </div>
+
+    <ion-infinite-scroll ng-if="moredatas" on-infinite="loadMores()" distance="1%" immediate-check="false" ></ion-infinite-scroll>
+    </ion-content>
+    <ion-footer-bar class="bar bar-footer detailsOnLineFooter">
+        <div class="wAll">
+            <a class="aBtnBig" ng-click="goTeamBuySendLine()">确认</a>
+        </div>
+    </ion-footer-bar>
+</ion-view>

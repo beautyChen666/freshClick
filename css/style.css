@@ -1,0 +1,212 @@
+/* Empty. Add your own CSS if you like */
+
+/*样式重置*/
+body,ul,li,dl,dt,dd,p,ol,h1,h2,h3,h4,h5,h6,form,img,table,fieldset,legend{margin:0; padding:0;}
+ul,li,ol{list-style:none;}
+img,fieldset{border:0; }
+img{display:block;}
+a{text-decoration:none; color:#333;}
+h1,h2,h3,h4,h5,h6{font-weight:100;}
+body{font-size:12px; font-family:"微软雅黑";}
+input,a{outline:none;}
+ion-content:after{content:".";display:block;height:0;clear:both;overflow:hidden;visibility:hidden;}
+
+/*字体iconfont*/
+@font-face {
+    font-family: 'icon';        /*自定义名字*/
+    src: url('../img/iconfont/iconfont.eot'); /* IE9*/
+    src: url('../img/iconfont/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../img/iconfont/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('../img/iconfont/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('../img/iconfont/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+/*rem布局*/
+html{
+    font-size:31.25vw;
+}
+
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.pr{
+    position: relative;
+}
+.pa{
+    position: absolute;
+}
+.card, .list-inset{
+    margin: 10px;
+}
+input[readonly]:not(.cloned-text-input),input[type="text"]:disabled{
+    background: #ffffff;
+}
+.disInBlk{
+    display: inline-block;
+}
+.backFontSize{
+    font-size:0.16rem;
+    color:#999090;
+}
+.noBorderBtn{
+    border:none;
+}
+.bgGray{
+    width:100%;
+    height:100%;
+    background: #f4f4f4;
+}
+.dlb{
+    display: inline-block;
+}
+.db{
+    display: block;
+}
+.noBoreder{
+    border: none;
+}
+.tc{
+    text-align: center;
+}
+.tr{
+    text-align: right;
+}
+.tl{
+    text-align: left;
+}
+.tj{
+    text-align: justify;
+    text-align-last: justify;
+}
+.wAll{
+    width: 100%;
+}
+.vm{
+    vertical-align: middle;
+}
+.vb{
+    vertical-align: bottom;
+}
+.va{
+    vertical-align: top;
+}
+.button[disabled]{
+    opacity: 0.5;
+}
+.timeWrap{
+    width:100%;
+    height:0.15rem;
+    background: #fee8b6;
+    opacity: 0.2;
+}
+.colorGray{
+    color: #d1d3d6;
+}
+.colorOO{
+    color: #FF5130!important;
+}
+.bgGreen{
+    background-color:#A8D853 !important;
+}
+.bgCont{
+    background-color:#F4F4F4 !important;
+}
+.padding0{
+    padding: 0px;
+}
+.borderNone{
+    border: none !important;
+}
+.ft20{
+    font-size: 20px;
+}
+.ft30{
+    font-size: 30px;
+}
+.f16{
+    font-size: 16px;
+}
+.popup {
+    background-color: #f3f3f3 }
+.popup .popup-head {
+    border-bottom: 1px solid #999999; }
+.popup .popup-head h3 {
+    line-height: 30px;
+    text-align: left;
+    font-size: 16px;
+    padding: 0 10px; }
+.popup .popup-body span {
+    display: block;
+    padding: 10px;
+    text-align: center; }
+.popup .popup-buttons .button.button-positive {
+    background-color: #85af41}
+.popup .popup-buttons .button.button-positive .actvated {
+    border-bottom: 1px solid #5bb530 }
+
+.OpenShopContent{
+    -webkit-overflow-scrolling: touch;
+}
+.popup .popup-head h3{
+    text-align: center;
+}
+
+.time-refresher-content ,.time-refresher-with-text{
+  padding-left: 1.5rem;
+}
+
+.news-center .news-content .private-mesg, .news-center .news-content .comment, .news-center .news-content .orders-mesg {
+    width: 100%;
+    height: .8rem;
+    border-bottom: 1px solid #ccc; }
+.news-center .news-content .private-mesg img, .news-center .news-content .comment img, .news-center .news-content .orders-mesg img {
+    width: .46rem;
+    margin: 0 .1rem;
+    display: inline-block;
+}
+.news-center .news-content .private-mesg > div, .news-center .news-content .private-mesg img, .news-center .news-content .comment > div, .news-center .news-content .comment img, .news-center .news-content .orders-mesg > div, .news-center .news-content .orders-mesg img {
+    vertical-align: middle;
+    margin-top: .1rem; }
+.news-center .news-content .private-mesg > div, .news-center .news-content .comment > div, .news-center .news-content .orders-mesg > div {
+    display: inline-block; }
+.news-center .news-content .private-mesg > div h5, .news-center .news-content .comment > div h5, .news-center .news-content .orders-mesg > div h5 {
+    font-weight: bold;
+    margin-bottom: 0.05rem; }
+.news-center .news-content .private-mesg > div p, .news-center .news-content .comment > div p, .news-center .news-content .orders-mesg > div p {
+    color: #666; }
+
+.noTopM{
+    top:0;
+}
+
+.default-bg {
+    width: 100%;
+    height: 5px;
+    background: -webkit-linear-gradient(top, #fff, #c5c5c5);
+    /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(top, #fff, #c5c5c5);
+    /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(top, #fff, #c5c5c5);
+    /* Firefox 3.6 - 15 */
+    background: linear-gradient(to top, #fff, #c5c5c5);
+    /* 标准的语法 */ }
+.set-up {
+    background-color: #f4f4f4; }
+.set-up .remind, .set-up .clear-up {
+    width: 100%;
+    height: 50px;
+    background-color: #FFFFFF;
+    margin-bottom: 10px; }
+.set-up .remind span, .set-up .clear-up span {
+    display: inline-block;
+    font-size: 15px;
+    line-height: 50px;
+    color: #666666;
+    margin-left: 10px; }
+.set-up .remind span:last-child, .set-up .clear-up span:last-child {
+    float: right;
+    margin-right: 20px; }
+
+

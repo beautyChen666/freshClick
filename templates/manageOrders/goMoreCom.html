@@ -1,0 +1,45 @@
+<ion-view view-title="评价">
+    <ion-nav-bar class="bar-stable" >
+        <ion-nav-back-button >
+            Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content  scroll="true"  class="bgGray">
+        <div class="setWidHei">
+        <ion-scroll scrollbar-y="false"
+                    class="scrollOrder"
+                    delegate-handle="comsmainScroll">
+            <ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh
+()"></ion-refresher>
+        <div class="productComs">
+            <dl  class="oneProductCom" ng-repeat="productTeambuyCom in
+productTeambuyComs">
+                <dt>
+                <div class="fl"><img src="{{productTeambuyCom.user.consumerInfo.userImgurl}}"/> </div>
+                <div class="fl">
+                    <p>{{productTeambuyCom.user.consumerInfo.nickname}}</p>
+                    <p><span ng-if="productTeambuyCom.commentUserFlag==2?true:false">Verified Buyer</span></p>
+                </div>
+                <div class="fr padRig">
+                    {{productTeambuyCom.addTime}}
+                </div>
+                </dt>
+                <dd>
+                    <p class="changWidSe"></p>
+                </dd>
+                <dd>
+                    {{productTeambuyCom.commentContent}}
+                </dd>
+                <!--<dd class="replyOther" ng-if="ifReplyMsg">-->
+                    <!--<p class="clrRed">我的回复</p>-->
+                    <!--<p>{{productTeambuyCom.replys[0].replyComment}}</p>-->
+                <!--</dd>-->
+                <a type="button" class="replyMsg" ng-click="goReplyMsgPage()">{{productTeambuyCom.replysCount}}</a>
+            </dl>
+        </div>
+            <ion-infinite-scroll ng-if="moreDataCanBeLoaded" on-infinite="loadMoreComOrder()" distance="1%"  immediate-check="false">
+            </ion-infinite-scroll>
+        </ion-scroll>
+        </div>
+    </ion-content>
+</ion-view>

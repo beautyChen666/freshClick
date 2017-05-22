@@ -1,0 +1,38 @@
+<ion-view view-title="找回密码">
+    <ion-nav-bar class="bar-stable">
+        <ion-nav-back-button icon="ios">
+            Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content scroll="false">
+        <div class="list " id="myFgtForm">
+            <form name="myForm2" novalidate>
+                <div class="labelWrap">
+                    <label class="item item-input borderBtm">
+                        <span class="iconFt">&#xe630;</span>
+                        <span class="input-label paddingLf mustColor">邮箱</span>
+                        <input type="email" name="email" placeholder="john.doe@gmail.com" ng-model="email" required
+                               id="forEmail" ng-keyup="pwdCheck()">
+                    </span>
+                    </label>
+                </div>
+                <div class="labelWrap posRl">
+                    <label class="item item-input borderBtm">
+                        <span class="iconFt">&#xe70b;</span>
+                        <span class="input-label paddingLf">验证码</span>
+                        <input type="text" id="forEmailCode" class="inpWid" ng-keyup="pwdCheck1()">
+                    </label>
+                    <span class="posAb">
+                       <button class="youCode" id="forGetCode" ng-disabled="forPwdCodeClick" ng-click="getForCode()">验证邮箱&nbsp;<span
+                               class="rTiming">60</span>s</button>
+                </span>
+                </div>
+                <div class="padding">
+                    <a class="button button-block button-balanced borderRa" type="submit"
+                       ng-disabled="canClick1||canClick2"
+                       ng-click="goSetNewPwd()">下一步</a>
+                </div>
+            </form>
+        </div>
+    </ion-content>
+</ion-view>

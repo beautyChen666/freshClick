@@ -1,0 +1,35 @@
+<ion-view view-title="用户评论管理">
+    <ion-nav-bar class="bar-stable">
+        <ion-nav-back-button>
+            Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content scroll="false" class=" bgGray">
+        <div class="setWidHei">
+            <ion-scroll scrollbar-y="false" class="scrollOrder" delegate-handle="prodmainScroll">
+                <ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh()"></ion-refresher>
+                <ion-list>
+                    <ion-item class="item-remove-animate oneCusCom" type="item-text-wrap"
+                              ng-repeat="oneCusCom in someCunCom">
+                        <div>商品名称：{{oneCusCom.productName}}</div>
+                        <div>用户昵称：<span class=" ifBuyede">{{oneCusCom.customerInfo.nickname}}</span></div>
+                        <div class="star" style="margin-top: 10px">
+                            <span>五星评分：</span>
+                            <i class="{{star.icon}}" style="color: #FC822C" ng-repeat="star in oneCusCom.starArray"></i>
+                        </div>
+                        <div style="line-height: 20px;margin: 10px 0;color: #666;">评论内容：{{oneCusCom.commentContent}}</div>
+                        <div style="margin-bottom: 10px">
+                            <p style="color: #999;">{{oneCusCom.addTime}}
+                                <a type="button" class="replyMsg" style="margin-right: 0px" ng-click="goReplyMsg()">{{oneCusCom.replysCount}}</a>
+                            </p>
+                        </div>
+                    </ion-item>
+                </ion-list>
+                <div ng-if="ifHavaData">暂无数据....</div>
+                <ion-infinite-scroll ng-if="moreDataCanBeLoaded" on-infinite="loadMoreProdCom()" distance="1%"
+                                     immediate-check="false">
+                </ion-infinite-scroll>
+                </ion-scroll>
+        </div>
+    </ion-content>
+</ion-view>

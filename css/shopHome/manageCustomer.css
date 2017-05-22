@@ -1,0 +1,32 @@
+.goOtherPageLinks{
+    height:0.72rem;
+    display: flex;
+    border-top:1px solid #eeeeee;
+    border-bottom:1px solid #eeeeee;
+}
+.goOtherPageLink{
+    flex:1;
+    border-right:1px solid #eeeeee;
+}
+.goOtherPageLinks div:nth-of-type(3){
+    border:0;
+}
+.goOtherPageLink p:nth-of-type(1){
+    height:0.45rem;
+    padding:0.1rem 0.35rem;
+}
+.goOtherPageLink p:nth-of-type(1) img{
+    width:0.32rem;
+    height:0.32rem;
+}
+.goOtherPageLink:nth-of-type(3) p:nth-of-type(1) img{
+    width:0.32rem;
+    height:0.25rem;
+    margin-top:0.05rem;
+}
+.goOtherPageLink p:nth-of-type(2){
+    height:0.26rem;
+    line-height: 0.26rem;
+    text-align: center;
+    font-size:0.12rem;
+}

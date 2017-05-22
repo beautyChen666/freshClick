@@ -1,0 +1,50 @@
+<ion-view view-title="路线管理">
+    <ion-nav-bar class="bar-stable">
+        <ion-nav-back-button>
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content class="padding lineManagement" overflow-scroll="false">
+        <ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>
+        <ion-list>
+            <div  ng-repeat="data in lineManagementDatas track by $index">
+                <div class="item row" style="border-top:none;">
+                    <div class="col">
+                        线路名：<sapn class="colorGray">{{data.routeName}}</sapn>
+                    </div>
+                    <div class="col tr">
+                        状态：<span class="colorOrange" ng-class="{true:'colorGray'}[data.routeStatus==='0']">{{data.routeStatus|filterState}}</span>
+                    </div>
+                </div>
+                <ul class="listUl">
+                    <li class="item row">
+                        <div class="col">最低下限值:</div>
+                        <div class="col tr colorGray">${{data.minAmount}}</div>
+                    </li>
+                    <li class="item row">
+                        <div class="col">配送距离:</div>
+                        <div class="col tr colorGray">{{data.maxDistance}}mile</div>
+                    </li>
+                    <li class="item row">
+                        <div class="col">实际距离:</div>
+                        <div class="col tr colorGray">{{data.routeDistance}}mile</div>
+                    </li>
+                    <li class="item row">
+                        <div class="col">配送站点:</div>
+                        <div class="col tr colorGray">{{data.countAllocation}}个</div>
+                    </li>
+
+                </ul>
+                <p  class="item tr"  style="border-bottom:none;">
+                    <a  class="colorOrange"  ng-click="lMgoDetails($index)">查看详情 <i class="ion ion-chevron-right"></i> </a>
+                </p>
+            </div>
+        </ion-list>
+        <ion-infinite-scroll ng-if="moredataLineManagement" on-infinite="loadMore()" distance="1%"  immediate-check="false" ></ion-infinite-scroll>
+    </ion-content>
+    <ion-footer-bar class="bar bar-footer tc lineManagementFooter">
+        <div class="lineManagementFooterDiv" ng-click="addNewLine()">
+            <i class="ion ion-plus-round" style="font-size: 0.3rem;"></i><br>
+            <span>添加路线</span>
+        </div>
+    </ion-footer-bar>
+</ion-view>

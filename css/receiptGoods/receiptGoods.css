@@ -1,0 +1,33 @@
+.receiptGoodsHome{
+    background: url(../../img/receiptGoods/QR2.png) no-repeat;
+}
+.receiptGoodsHomeFooetr.tabs{
+    height:auto;
+}
+.receiptGoodsHomeFooetr .tab-item{
+    opacity: 1;
+}
+.receiptGoodsHomeTabs{   /*tabs 发货履历和手动发货*/
+    width: 0.6rem;
+    height: 0.6rem;
+    background-color: #9FE426;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%;
+    display: block;
+    margin: 0 auto;
+}
+.receiptGoodsHomeTabs img{
+    position: absolute;
+    top: 29%;
+    left: 29%;
+}
+.receiptGoodsHomeTabs+span{
+    color: #fff;
+}
+.receiptGoodsHomeFooetr{  /*底部设置*/
+    border-top-color: black;
+    padding-top:0.055rem;
+    background-color:#42443D ;
+}
+

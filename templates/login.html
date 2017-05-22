@@ -1,0 +1,33 @@
+
+<ion-view title="login">
+  <ion-content id="bigBg" scroll="true" overflow-scroll="false">
+    <div class="loginWrap">
+      <div id="smallLogo">
+          <img src="img/login/freshClick@3x.png" />
+      </div>
+      <form id="loginForm">
+        <div class="list">
+          <label class="item item-input marginBtm">
+            <span class="iconF">&#xe649;</span>
+            <span class="input-label lab cloW" >账号</span>
+            <input type="text"  id="userEmail">
+          </label>
+          <label class="item item-input marginBtm">
+            <span class="iconF">&#xe611;</span>
+            <span class="input-label lab cloW" >密码</span>
+            <input type="password" id="userPwd">
+          </label>
+          <p class="toOther">
+              <a href="#/forgitPwd" class="fl cloW">忘记密码</a>
+              <a href="#/register" class="fr cloW">注册 》</a>
+          </p>
+          <a  class="button button-block cloW" id="loGin"  type="submit" ng-click="goLogin()"  >登 录</a>
+        </div>
+      </form>
+      <div id="otherLogin">
+          <a class="fl cloW" href="#/imInformation2"><img src="img/login/google@3x.png"/></a>
+          <a class="fr cloW" href="#/imInformation2"><img src="img/login/facebook@3x.png"/></a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

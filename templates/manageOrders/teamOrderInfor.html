@@ -1,0 +1,40 @@
+<ion-view view-title="团购单详情">
+    <ion-nav-bar class="bar-stable" >
+        <ion-nav-back-button>
+            Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content  scroll="true" class="bgGray orderPadding">
+        <div class="TeamOrderName">
+            <div class="teamOrdNa">{{orderInfor.teambuyNeme}}</div>
+            <div class="teamOrdersRt">路线：{{orderInfor.touteName}}</div>
+            <div class="teamOrderAllData">
+                <p>开单日:<span>{{orderInfor.saleStarttime}}</span></p>
+                <p>截单日:<span>{{orderInfor.saleEndtime}}</span></p>
+            </div>
+            <div class="teamOrderAllData">
+                <p>配送日:<span id="showTimeRout">{{orderInfor.routeTime}}</span></p>
+            </div>
+            <div class="teamOrderAllMoney">
+                <p>已售: $<span>{{orderInfor.currentAmount}}</span></p>
+                <p>目标: $<span>{{orderInfor.maxAmount}}</span></p>
+            </div>
+        </div>
+        <div class="teamOrderProducts">
+            <dl ng-repeat="oneProInTeam in teambuyProducts" class="oneProInTeam" ng-click="goProdInfor()">
+            <dt class="fl"><img ng-src="{{oneProInTeam.productLogo}}"></dt>
+            <dd class="fl">
+                <p>{{oneProInTeam.productName}}</p>
+                <p>
+                    <span>已售：{{oneProInTeam.currentQuantity}}</span>
+                    <span>库存：{{oneProInTeam.productInventory}}</span>
+                </p>
+            </dd>
+        </dl>
+        </div>
+        <div id="changeTimes" >
+            <span data-year="" data-month="" data-date="" id="showChangeTime"></span>
+            <a >更改配送时间</a>
+        </div>
+    </ion-content>
+</ion-view>

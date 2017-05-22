@@ -1,0 +1,32 @@
+<ion-view view-title="历史">
+    <ion-nav-bar class="bar-stable" >
+        <ion-nav-back-button icon="ios">
+            Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content  scroll="false">
+        <!--需要滚动的地方开始-->
+        <ion-scroll class="myScorllShop" scrollbar-y="false" delegate-handle="mainScroll">
+            <ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh()"></ion-refresher>
+            <div  class="OrderList marginTopHave">
+                <ion-list >
+                    <ion-item class="item-remove-animate item-avatar item-icon-right isHisList" ng-repeat="oneOrder in someOrders" type="item-text-wrap" ng-click="goTeamOrder()">
+                        <div class="orderName">
+                            团购单  {{oneOrder.teambuyNeme}}
+                        </div>
+                        <div class="orderDist">
+                            <p class="sameFontP">线路：<span>{{oneOrder.touteName}}</span></p>
+                            <p class="sameFontP">配送日：<span>{{oneOrder.routeTime}}</span></p>
+                            <div class="sameFlexD"><p >截单日：<span>{{oneOrder.saleEndtime}}</span></p><p>开单日：<span>{{oneOrder.saleStarttime}}</span></p></div>
+                            <div class="progresBarWrap"><p ><span class="nowProesB nowProWid"></span></p><p ><span>{{oneOrder.baifenNum}}</span>%</p></div>
+                            <div class="sameFlexD"><p class="bgCic1">已售  $<span>{{oneOrder.currentAmount}}</span></p><p class="bgCic2">目标 $<span>{{oneOrder.minAmount}}</span></p> </div>
+                        </div>
+                    </ion-item>
+                </ion-list>
+            </div>
+
+            <ion-infinite-scroll ng-if="moreDataCanBeLoaded" on-infinite="loadMoreOrder()" distance="1%"  immediate-check="false">
+            </ion-infinite-scroll>
+        </ion-scroll>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,46 @@
+.picTitle{
+    width:100%;
+    height:0.3rem;
+    line-height: 0.3rem;
+    padding-left:0.15rem;
+}
+.stateAndPic1,.stateAndPic2{
+    width:100%;
+    height:2.5rem;
+    margin-top:0.1rem;
+    background: #FFFFFF;
+}
+
+.stateWrap{
+    height:0.4rem;
+    padding-top:0.2rem;
+    padding-right: 0.15rem;
+}
+
+.choseState{
+    height:0.2rem;
+    float: right;
+}
+.choseState p{
+    padding:0 0.02rem;
+    font-size: 0.12rem;
+    background:#f4f4f4;
+    float: left;
+
+}
+.choseState .nowState{
+    background: #82ad3e;
+    color:#FFFFFF;
+}
+.dountChartP,.curveChartP{
+    width:3.2rem;
+    height:1.8rem;
+}
+.canDount{
+    width:3.2rem;
+    height:1.6rem;
+}
+.canCurve {
+    width: 3.2rem;
+    height: 1.6rem;
+}

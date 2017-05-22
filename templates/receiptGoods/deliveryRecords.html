@@ -1,0 +1,41 @@
+<ion-view view-title="发货履历">
+    <ion-nav-bar class="bar-stable">
+        <ion-nav-back-button>
+            Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content class="padding deliveryRecords">
+        <ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>
+        <div>
+            <ul class="list">  <!--展示发货履历信息-->
+                <li class="item" ng-repeat="data in deliveryRecordsDatas">
+                    <div class="DRListHeader">
+                        <sapn><i class="ion-ios-time-outline"></i>{{data.realityReceivingTime}}</sapn>
+                        <span class="sendGoodsSuccess">发货成功</span>
+                    </div>  <!--头部-->
+                    <div>
+                        <p class="DRDetails">
+                            <span>用户名:</span>
+                        <span>
+                           {{data.customerInfo.nickname||data.customerInfo.email}}
+                        </span>
+                        </p>
+                        <p class="DRDetails">
+                            <span>订单号:</span>
+                        <span>
+                            {{data.orderId}}
+                        </span>
+                        </p>
+                        <p class="DRDetails">
+                            <span>配送点:</span>
+                        <span>
+                            {{data.allocationName}}
+                        </span>
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <ion-infinite-scroll ng-if="moredata" on-infinite="loadMore()" distance="1%" immediate-check="false"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

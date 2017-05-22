@@ -1,0 +1,42 @@
+<ion-view view-title="订单">
+    <ion-nav-bar class="bar-stable" >
+        <ion-nav-back-button >
+            Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content  scroll="true" class="bgGray">
+        <div class="setWidHei">
+            <ion-scroll scrollbar-y="false" class="scrollOrder" delegate-handle="prodmainScroll">
+                <ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh
+    ()"></ion-refresher>
+                <div class="productOrders">
+                    <dl  class="oneProductOrder" ng-repeat="productTeambuyOrder in
+        productTeambuyOrders">
+                        <dt>
+                        <p class="fl"><img src="{{productTeambuyOrder.userImgurl}}"/>
+                        </p>
+                        <p class="fl">
+                            {{productTeambuyOrder.nickName}}
+                        </p>
+                        <p class="fr padRig">
+                            {{productTeambuyOrder.realityReceivingTime}}
+                        </p>
+                        </dt>
+                        <dd>
+                            订单编号
+                            {{productTeambuyOrder.orderDetailId}}
+                        </dd>
+                        <dd>
+                            <span>订单数量{{productTeambuyOrder.productRealityQuantity}}</span>
+                                        <span>单价${{productTeambuyOrder.productPrice}}/
+        {{productTeambuyOrder.productUnit}}</span>
+                            <span>订单金额${{productTeambuyOrder.productRealityAmount}}</span>
+                        </dd>
+                    </dl>
+                </div>
+                <ion-infinite-scroll ng-if="moreDataCanBeLoaded" on-infinite="loadMorePOrder()"  distance="1%"  immediate-check="false">
+                </ion-infinite-scroll>
+            </ion-scroll>
+        </div>
+    </ion-content>
+</ion-view>

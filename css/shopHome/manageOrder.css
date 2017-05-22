@@ -1,0 +1,115 @@
+.OrderList{
+    width:100%;
+    height:100%;
+    padding:0 0.1rem;
+}
+.OrderList ion-item{
+    width:3rem;
+    background-color: #FFFFFF;
+    height:1.15rem;
+    margin-bottom: 0.1rem;
+    border:1px solid #ededed;
+    box-shadow:0 0.02rem  0.02rem #ededed;
+    border-radius: 0.05rem;
+    padding:0;
+}
+.orderName{
+    height:0.3rem;
+    line-height: 0.3rem;
+    font-size:0.16rem;
+    padding-left:0.2rem;
+    padding-right:0.2rem;
+}
+.OrderList .item p{
+    font-size: 0.1rem;
+    color:#a2a2a2;
+}
+.orderDist{
+    font-size:0.1rem;
+    color:#a2a2a2;
+    padding-left:0.32rem;
+    padding-right: 0.14rem;
+}
+.sameFontP{
+    height:0.14rem;
+}
+.sameFlexD{
+    height:0.14rem;
+    width:2.52rem;
+    display: flex;
+}
+.sameFlexD p{
+    flex:1;
+
+}
+.progresBarWrap{
+    height:0.14rem;
+    display: flex;
+}
+.progresBarWrap p:nth-of-type(1){
+    width:2rem;
+    height:0.06rem;
+    background:#dfdede;
+    border:0;
+    border-radius: 0.03rem;
+    margin-top:0.08rem;
+    position: relative;
+}
+.nowProesB{
+    display: inline-block;
+    width:0.44rem;
+    height:0.06rem;
+    background:#b6e8bf;
+    position: absolute;
+    left:0;
+    top:0;
+    border-radius: 0.03rem;
+}
+.progresBarWrap p:nth-of-type(2){
+    margin-left:0.1rem;
+    width:0.5rem;
+}
+.OrderList .sameFlexD .bgCic1{
+    color:#000000;
+    height:0.14rem;
+    padding-left:0.1rem;
+    background: url(../../img/manegeOrder/123@3x.png) no-repeat 0 0.07rem;
+    background-size: 0.07rem 0.07rem;
+}
+.OrderList .sameFlexD .bgCic2{
+    color:#000000;
+    height:0.14rem;
+    padding-left:0.1rem;
+    background: url(../../img/manegeOrder/567@3x.png) no-repeat 0 0.07rem;
+    background-size: 0.07rem 0.07rem;
+}
+.orderName button{
+    display: inline-block;
+    border:0;
+    background: #f7aa20;
+    color: #ffffff;
+    text-align: center;
+    /*width:0.45rem;*/
+    padding:0 0.1rem;
+    height:0.18rem;
+    line-height: 0.18rem;
+    font-size:0.1rem;
+    float:right;
+    margin-top: 0.07rem;
+    border-radius: 0.1rem;
+}
+.productDetailsHomeHeader{
+    background: #f8f8f8;
+}
+.orderName .routeBtn{
+    background: #f7aa20;
+    opacity: 0.5;
+}
+.OrderList .haveSpeciel{
+    background-color: #FFFFFF;
+    background:url(../../img/historyOrder/666@3x.png) no-repeat 2.5rem 0.15rem;
+    background-size:0.3rem 0.3rem;
+}
+.noBorderBtn{
+    font-size:0.12rem;
+}

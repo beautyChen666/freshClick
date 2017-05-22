@@ -1,0 +1,53 @@
+<ion-view view-title="邀请开店">
+
+    <ion-nav-bar class="bar-stable" style="visibility: hidden">
+        <ion-nav-back-button icon="ios">
+            Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-side-menus delegate-handle="isSideOpen">
+        <ion-side-menu side="left" class="onesInformation">
+            <div class="onesInformationPhoto">
+                <div><img src="{{initSrc || img/photo/ben.png}}"> </div>
+                <p>{{userNikname}}</p>
+                <span class="setup" ng-click="toSetUp()"><img src="img/shopHome/ion_setup.png" alt=""></span>
+            </div>
+            <ul class="onesInformationList">
+                <li><a ng-click="goOnesInfo()">个人信息</a></li>
+                <li><a type="button" ng-click="goChangePwd()" href="#/inputPwd">密码修改</a></li>
+                <li><a href="#/manageBankCard">银行账户管理</a></li>
+                <li><a>版本信息</a></li>
+            </ul>
+            <div class="onesExitLogin">
+                <a href="#/login" ng-click="logOut()">退出登录</a>
+            </div>
+        </ion-side-menu>
+
+        <ion-side-menu-content drag-content="true" scroll="false">
+
+            <header class="shopHeader">
+                <p class="fl inforIcon"><a menu-toggle="left" ><img src="img/goOpenShop/xiaotubiao.png"/></a></p>
+                <p class="fr titleLogo"><img src="img/login/freshClick@3x.png"/></p>
+            </header>
+
+            <div class="shopContent">
+                <p class="joinUs">
+                    加入我们
+                </p>
+                <p class="houseImg">
+                    <img src="img/goOpenShop/房子@3x.png"/>
+                </p>
+                <p class="englishFont">
+                    <img src="img/goOpenShop/freshClick@3x.png"/>
+                </p>
+                <p class="chineseFont">
+                    免费开店，轻松赚钱
+                </p>
+                <div class="goOpenBtn">
+                    <a class="goBtn" ng-click="goOpenStore()">去开店</a>
+                </div>
+            </div>
+        </ion-side-menu-content>
+
+    </ion-side-menus>
+</ion-view>

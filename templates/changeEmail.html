@@ -1,0 +1,34 @@
+<ion-view  view-title="邮箱验证"> <!--头部title-->
+    <ion-nav-bar class="bar-stable">
+        <ion-nav-back-button >
+            Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+
+    <ion-content class="padding" scroll="false">
+        <div class="list " id="myFgtFormE" >
+            <form   name="myFormE" novalidate>
+                <div class="labelWrap">
+                    <label class="item item-input borderBtm">
+                        <span class="input-label paddingLf">邮箱</span>
+                        <input  type="text" name="email" disabled="disabled" value="{{userEmail}}"  required id="forEmailE">
+                    </label>
+                </div>
+                <div class="labelWrap posRl">
+                    <label class="item item-input borderBtm">
+                        <span class="input-label paddingLf">验证码</span>
+                        <input type="text" id="forEmailCodeE"  class="inpWid" ng-model="code" ng-keyup="CheckEmailCode()">
+                    </label>
+                <span class="posAb">
+                       <button class="youCode" id="email"  ng-disabled="emailClick"  ng-click="getForCodEmail()" >验证邮箱&nbsp;
+                           <span class="rTiming">60</span>s</button>
+                </span>
+                </div>
+                <div  class="padding">
+                    <a class="button button-block button-balanced borderRa"  ng-disabled="canClickE"   type="submit" ng-click="goSetNewE()" >确定</a>
+                </div>
+            </form>
+        </div>
+
+    </ion-content>
+</ion-view>

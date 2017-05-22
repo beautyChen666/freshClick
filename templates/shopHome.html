@@ -1,0 +1,105 @@
+<ion-view view-title="店铺首页">
+    <ion-content  scroll="false" class="bgGray">
+        <header class="shopHeaderBg">
+            <div class="includePhoto">
+                <p class="goBackA fl">
+                    <a class="backArrow" ng-click="back()">
+                        <img class="disInBlk fl" src="img/shopHome/arrow.png"/>
+                        <span class="backFontSize fl">Back</span>
+                    </a>
+                </p>
+                <P class="onlyPhoto fl">
+                   <img src="img/photo/ben.png"/>
+                </P>
+                <p class="fl onlyChat">
+                    <a class="noMassage" ng-click="chatsLine()"></a>
+                </p>
+            </div>
+            <div class="shortDiscribleShop">
+                <p class="shopTit">{{thisStore.storeName}}</p>
+                <p class="thoughtNum">浏览量：{{thisStore.pageView}}</p>
+                <p class="shopShort">店铺简介：{{thisStore.storeDetail}}</p>
+            </div>
+        </header>
+
+        <ul class="someShopNum">
+            <li>
+               <p class="numTit">开单数</p>
+               <p class="colorRed">{{thisStore.openTeamBuyAmount}}</p>
+            </li>
+            <li>
+                <p class="numTit">待发货</p>
+                <p class="colorRed">{{thisStore.dropShippingAmount}}</p>
+            </li>
+            <li class="borderNone">
+                <p class="numTit">流单数</p>
+                <p class="colorRed">{{thisStore.misbirthTeambuyAmount}}</p>
+            </li>
+        </ul>
+        <div class="shopHomeCon">
+            <ul class="flexClu">
+                <li class="borderRB ">
+                    <a ng-click="goAddPro()">
+                        <img src="img/shopHome/shoppingBag6@3x.png">
+                        <p>添加产品</p>
+                    </a>
+
+                </li>
+                <li class="borderRB ">
+                    <a ng-click="goManagePro()">
+                        <img src="img/shopHome/package2@3x.png">
+                        <p>管理产品</p>
+                    </a>
+
+                </li>
+                <li class="borderRB borderRNo">
+                    <a ng-click="toOpenTeambuyOrder()">
+                        <img src="img/shopHome/shoppingCart2@3x.png">
+                        <p>开单</p>
+                    </a>
+                </li>
+            </ul>
+            <ul class="flexClu">
+                <li class="borderRB ">
+                    <a ng-click="toManageOrder()">
+                        <img src="img/shopHome/monitor@3x.png">
+                        <p>订单管理</p>
+                    </a>
+                </li>
+                <li class="borderRB ">
+                    <a href="#/shopHome/distributionRoute">
+                        <img src="img/shopHome/truck@3x.png">
+                        <p>配送</p>
+                    </a>
+                </li>
+                <li class="borderRB borderRNo">
+                    <a href="#/shopHome/manageCustomer">
+                        <img src="img/shopHome/shoppingCart6@3x.png">
+                        <p>客户管理</p>
+                    </a>
+                </li>
+            </ul>
+            <ul class="flexClu">
+                <li class="borderRB borderBNo">
+                    <a ng-click="goDistribution()">
+                        <img src="img/shopHome/delivery@3x.png">
+                        <p>线路管理</p>
+                    </a>
+                </li>
+                <li class="borderRB borderBNo">
+                    <a href="#/shopHome/dataStatistics">
+                        <img src="img/shopHome/pieChart@3x.png">
+                        <p>统计分析</p>
+                    </a>
+                </li>
+                <li class="borderRB borderRNo borderBNo">
+                    <a  ng-click="goChangeStoreInfo()">
+                        <img src="img/shopHome/idCard@3x.png">
+                        <p>店铺信息</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </ion-content>
+</ion-view>

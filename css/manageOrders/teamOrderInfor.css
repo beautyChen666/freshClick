@@ -1,0 +1,104 @@
+.orderPadding{
+    padding:0.1rem 0.15rem;
+}
+.TeamOrderName{
+    width:100%;
+    height:1.12rem;
+    border:1px solid #ededed;
+    border-radius: 0.05rem;
+    background: #FFFFFF;
+    padding-left:0.08rem;
+    font-size: 0.1rem;
+}
+.teamOrdNa{
+    width:100%;
+    height:0.3rem;
+    line-height: 0.3rem;
+    color:#54597e;
+    text-align: center;
+    font-size: 0.14rem;
+}
+.teamOrdersRt{
+    width:100%;
+    line-height: 0.10rem;
+    height:0.2rem;
+}
+.teamOrderAllData,.teamOrderAllMoney{
+    width:100%;
+    height:0.2rem;
+    display: flex;
+    line-height: 0.10rem;
+}
+.teamOrderAllData p{
+    flex:1;
+}
+.teamOrderAllMoney p:nth-of-type(1){
+    flex:1;
+}
+.teamOrderAllMoney p:nth-of-type(2){
+    flex:2;
+}
+.teamOrderProducts{
+    width:100%;
+    /*height:100%;*/
+    margin-top:0.18rem;
+    border-radius: 0.05rem;
+    border:1px solid #ededed;
+    background: #FFFFFF;
+}
+.oneProInTeam{
+    width:100%;
+    height:0.78rem;
+    border-bottom:1px solid #ededed;
+}
+.teamOrderProducts dl:nth-last-of-type(1){
+    border:0;
+}
+.oneProInTeam dt{
+    width:1rem;
+    height:100%;
+    /*background:pink;*/
+    padding:0.05rem 0.1rem;
+}
+.oneProInTeam dt img{
+    width:0.78rem;
+    height:0.64rem;
+}
+.oneProInTeam dd p:nth-of-type(1){
+    width:100%;
+    height:0.48rem;
+    line-height: 0.48rem;
+    font-size: 0.12rem;
+}
+.oneProInTeam dd p:nth-of-type(2){
+    color:#a4a4a4;
+}
+.oneProInTeam dd p:nth-of-type(2) span:nth-of-type(1){
+    margin-right: 0.2rem;
+}
+
+.sellingBg{
+    background:url(../../img/teamOrderInfor/888@3.png) no-repeat 2.48rem 0.08rem;
+    background-size: 0.3rem 0.3rem;
+}
+.sellOverBg{
+    background:url(../../img/teamOrderInfor/886@3x.png) no-repeat 2.48rem 0.08rem;
+    background-size: 0.3rem 0.3rem;
+}
+#changeTimes{
+    width:100%;
+    height:0.4rem;
+    margin-top:0.2rem;
+}
+#changeTimes a{
+    display: block;
+    width:1.6rem;
+    height:0.4rem;
+    font-size: 0.16rem;
+    line-height: 0.4rem;
+    color: #ffffff;
+    text-align: center;
+    background: #85af41;
+    margin-left:0.7rem;
+    border-radius: 0.2rem;
+}

@@ -1,0 +1,34 @@
+<ion-view  view-title="电话验证"> <!--头部title-->
+    <ion-nav-bar class="bar-stable">
+        <ion-nav-back-button >
+            Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content class="padding" scroll="false">
+        <div class="list " id="myFgtFormE" >
+            <form   name="myFormE" novalidate>
+                <div class="labelWrap">
+                    <label class="item item-input borderBtm">
+                        <span class="input-label paddingLf">电话</span>
+                        <input  type="text" required id="telphone"  disabled  ng-model="phone" ng-change="ifTelIn()">
+                    </label>
+                </div>
+                <div class="labelWrap posRl">
+                    <label class="item item-input borderBtm">
+                        <span class="input-label paddingLf">验证码</span>
+                        <input type="text" id="forEmailCodeT"  class="inpWid" ng-model="code" ng-keyup="CheckTelCode()">
+                    </label>
+                <span class="posAb">
+                       <button class="youCode" id="tel" ng-disabled="telClick"   ng-click="getForCodTel()" >验证电话
+                           <span class="rTiming">60</span>s
+                       </button>
+                </span>
+                </div>
+                <div  class="padding">
+                    <button class="button button-block button-balanced borderRa" ng-disabled="canClickT" type="submit" ng-click="goSetNewE()">确定</button>
+                </div>
+            </form>
+        </div>
+
+    </ion-content>
+</ion-view>

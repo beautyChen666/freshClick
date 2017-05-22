@@ -1,0 +1,41 @@
+.allDistributionSitesCont,.allDistributionSites{
+    margin-top: 0.5rem;
+}
+.allDistributionSitesCont{
+    background-color: #F4F4F4;
+    height: 4.2rem;
+}
+.bar .buttons-right span{
+   margin-right: 0.09rem;
+}
+.allDistributionSites .allDistributionSitesHeader .item-input{
+    border-radius: 0.3rem !important;
+    padding: 2px 16px 3px 16px !important;
+}
+.allDistributionSites .allDistributionSitesHeader .list{
+    margin: -4px 10px;
+    border: 1px solid #AFAFAF;
+    border-radius: 24px;
+}
+.allDistributionSitesUl .item{
+    border: none;
+    padding: 0.09rem;
+    border-bottom: 1px solid #dddddd;
+    font-size: 0.13rem;
+    margin: 0;
+}
+.allDistributionSitesUl .checkbox input, .checkbox-icon{
+    width: 0.22rem;
+    height: 0.22rem;
+}
+
+.allSitesDiv{
+    padding-left: 0.14rem;
+}
+.allDistributionSitesHeader .cancelAll{
+    position: absolute;
+    right: 6%;
+    top: 22%;
+    z-index: 99;
+    font-size: 16px;
+}

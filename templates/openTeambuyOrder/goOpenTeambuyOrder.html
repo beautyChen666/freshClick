@@ -1,0 +1,114 @@
+<ion-view view-title="开单">
+    <ion-header-bar align-title="center" class="productDetailsHomeHeader">
+        <div class="buttons"  ng-click="ionicGoBack()">
+            <a class="button" ><i class="ion ion-ios-arrow-back ft20"></i></a>
+        </div>
+        <h1 class="title">开单</h1>
+    </ion-header-bar>
+    <ion-content class="has-header openteambuyorder" style="bottom:65px;"  >
+        <div class="list titleDiv">
+            <label class="item item-input" style="padding:0 0.1rem">
+                    <span class="dlb input-label"><i class="ion-ios-list-outline"></i> 团购单名称<img src="img/icons/start.png" alt="" class="dlb"></span>
+                     <input class="tr" type="text" id="teambuyName">
+            </label>
+            <label  ng-click="goselectRoutes()"  id="selectRoutes" class="item item-input">
+                <div class="row OTBOspanWrap">
+                    <div class="col"><i class="ion-android-folder-open"></i> 选择路线<img src="img/icons/start.png" alt="" class="dlb"></div>
+                    <div class="col tr">{{routeName}} <i class="icon ion-chevron-right"></i></div>
+                </div>
+            </label>
+            <label class="item item-input" id="distriTime">
+                <div class="row OTBOspanWrap">
+                    <div class="col"><i class="icon ion-ios-alarm-outline"></i> 配送时间<img src="img/icons/start.png" alt="" class="dlb"></div>
+                    <div class="col tr"><span id="routeTime"></span><i class="icon ion-chevron-right"></i></div>
+                </div>
+            </label>
+            <label class="item item-input"   id="selectDate">
+                <div class="row OTBOspanWrap">
+                    <div class="col"><i class="icon ion-ios-stopwatch-outline"></i> 截单时间<img src="img/icons/start.png" alt="" class="dlb"></div>
+                    <div class="col tr"><span id="saleEndTime"></span><i class="icon ion-chevron-right"></i></div>
+                </div>
+            </label>
+            <label class="item item-input" style="padding:0 0.1rem">
+                <span class="dlb input-label"><i class="ion-android-clipboard"></i> 送货下限<img src="img/icons/start.png" alt="" class="dlb"></span>
+                <input class="tr" type="text" id="minAmount">
+            </label>
+            <label class="item item-input" style="padding:0 0.1rem">
+                <span class="dlb input-label"><i class="ion-android-calendar"></i> 实际金额<img src="img/icons/start.png" alt="" class="dlb"></span>
+                <input class="tr" type="text" id="maxAmount" disabled>
+            </label>
+        </div>
+        <div>
+            <ul class="list openteambuyorderUL">
+                <li class="items item item-checkbox"  ng-repeat="data in goOpenTeambuyOrderDatas track by $index"><!--ng-repeat="data in orderInformationDatas track by $index"-->
+                    <label class="checkbox">
+                        <input type="checkbox" class="productListCheck" ng-click="isChecked($event,$index)" >
+                    </label>
+                    <div class="">
+                        <img class="dlb OIimg va" src="img/receiptGoods/appler.png" alt="">
+                        <div  class="dlb" style="font-size: 0.12rem;width:1.8rem;">
+                            <table class="table">
+                                <tr class="orangeFt tableBorder">
+                                    <td  class="left_one  td tc">商品名</td>
+                                    <td class="other_middle td tc">库存</td>
+                                    <td class="other_td td tc">价格</td>
+                                </tr>
+                                <tr class="bottom_tr">
+                                    <td class="td tc">{{data.productName}}</td>
+                                    <td class="td tc">{{data.productInventory}}{{data.productUnit}}</td>
+                                    <td class="td tc">{{data.productPrice}}/{{data.productUnit}}</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="tc colorOO" ng-click="openTeameEdit($index)">编辑</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </ion-content>  <!--内容-->
+    <ion-footer-bar class="bar bar-footer openteambuyorderFooter" style="width:100%;height:0.55rem;">  <!--底部按钮-->
+        <div class="row">
+            <div class="col" style="padding-top: 3%;">
+                <label class="checkbox vm">
+                    <input type="checkbox" ng-click="selectAll($event)"  class="TproductListCheck_button" >
+                </label>
+                <span  class="tc dlb" style="line-height: 0.33rem">全选</span>
+            </div>
+            <div class="col">
+                <a type="button" class="foot_button goTeamActive" ng-click="addGoods()" >add</a>
+            </div>
+            <div class="col">
+                <a type="button" class="foot_button delete" ng-click="openTeameDetel()" ng-class="{true: 'goTeamActive'}[TeamActiveBtnS]" ng-disabled="!TeamActiveBtnS">删除</a>
+            </div>
+            <div class="col">
+                <a type="button" class="foot_button_add" ng-click="addLineOne()">提交订单</a>
+            </div>
+        </div>
+    </ion-footer-bar>
+    <script id="openTeamPup.html" type="text/ng-template">
+        <div class="conAlertBg pr">
+            <a type="button" class="pa conClose" ng-click="closeOpenTeamPup()">
+                <i class="ion ion-close ion-arrow-right"></i>
+            </a>
+        </div>
+        <div>
+            <p class="conP changeNumDiv">商品名称: <span>{{pupProductName}}</span></p>
+            <div class="changeNumDiv">
+                <span>选择库存</span>
+                <input name="number" type="number" id="pupProductInventory" value={{pupProductInventory}} />
+            </div>
+            <div class="changeNumDiv">
+                <span>调整价格</span>
+                <input name="number" type="tel" id="pupProductPrice" value={{pupProductPrice}} />
+            </div>
+            <div>
+                <a type="button" class="aBtnBig OIbtn" ng-click="goChangeOrderNum()">确认</a>
+            </div>
+        </div>
+    </script>
+
+</ion-view>

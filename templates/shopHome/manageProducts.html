@@ -1,0 +1,77 @@
+<ion-view view-title="商品管理">
+    <ion-nav-bar class="bar-stable" >
+        <ion-nav-back-button ng-click="goHome()">
+            Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content class="bgGray " scroll="false">
+        <div class="chooseProd">
+            <p><a class="showProd nowChoose" ng-click="showProDo()">可售商品</a></p>
+            <p>|</p>
+            <p><a class="hideProd" ng-click="hideProDo()">隐藏商品</a></p>
+        </div>
+
+        <!--需要滚动的地方开始-->
+        <ion-scroll id="scrollTop " class="myScorllShop" scrollbar-y="false" delegate-handle="mainScroll">
+            <ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh()"></ion-refresher>
+        <!--可售商品-->
+
+        <div ng-if="showPro">
+            <ion-list class="productsList">
+                <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="oneProduct in someProducts" type="item-text-wrap" >
+                    <div ng-click="goProdInfor(oneProduct)">
+                        <div class="oneProductTop">
+                            <img ng-src="{{imagePreSrc}}{{oneProduct.productLogo}}">
+                            <div class="productsText">
+                                <p style="padding-right:15px">{{oneProduct.productName}}<span class="fr">${{oneProduct.productPrice}}</span></p>
+                                <p class="changeStar"><span  class="changeW fl"></span></span><span class="blueCo fl">({{oneProduct.commentAmount}})</span></p>
+                            </div>
+                        </div>
+                        <div class="productsP">
+                            <p><img src="img/manageProducts/msg.png"/><span>{{oneProduct.commentAmount}}</span> </p>
+                            <p><img src="img/manageProducts/eye.png"/><span>{{oneProduct.pageView}}</span>  </p>
+                            <p><img src="img/manageProducts/txt.png"/><span>{{oneProduct.orderAmount}}</span>  </p>
+                        </div>
+                    </div>
+                    <ion-option-button class="button-assertive opic" ng-click="toHidePro()">
+                        隐藏
+                    </ion-option-button>
+                </ion-item>
+                </ion-list>
+                <div class="bgBlkP">
+                    <div class="oneProductTop">
+                        <a ng-click="addProd()"><img src="img/manageProducts/add.png"/></a>
+                    </div>
+                    <p>
+                        <a>添加商品</a>
+                    </p>
+                </div>
+        </div>
+            <!--去隐藏商品页面-->
+            <div ng-if="!showPro">
+                <ion-list class="productsList">
+                    <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="oneProduct in someProducts" type="item-text-wrap">
+                        <div class="oneProductTop">
+                            <img ng-src="{{imagePreSrc}}{{oneProduct.productLogo}}">
+                            <div class="productsText">
+                                <p style="padding-right:15px">{{oneProduct.productName}}<span class="fr">${{oneProduct.productPrice}}</span></p>
+                                <p class="changeStar"><span  class="changeW"></span><span class="blueCo">({{oneProduct.commentAmount}})</span></p>
+                            </div>
+                        </div>
+                        <div class="productsP">
+                            <p><img src="img/manageProducts/msg.png"/><span>{{oneProduct.commentAmount}}</span> </p>
+                            <p><img src="img/manageProducts/eye.png"/><span>{{oneProduct.pageView}}</span>  </p>
+                            <p><img src="img/manageProducts/txt.png"/><span>{{oneProduct.orderAmount}}</span>  </p>
+                        </div>
+                        <ion-option-button class="button-energized opic" ng-click="toShowPro(oneProduct)">
+                            恢复
+                        </ion-option-button>
+                    </ion-item>
+        </ion-list>
+
+    </div>
+        <ion-infinite-scroll ng-if="moreDataCanBeLoaded" on-infinite="loadMoreProducts()" distance="1%"  immediate-check="false">
+        </ion-infinite-scroll>
+        </ion-scroll>
+    </ion-content>
+</ion-view>

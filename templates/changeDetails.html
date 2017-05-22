@@ -1,0 +1,31 @@
+
+<ion-view  view-title={{nowChangeWhat}}验证> <!--头部title-->
+    <ion-nav-bar class="bar-stable">
+        <ion-nav-back-button>
+            Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+
+    <ion-content class="padding">
+       <form name="ChangeDetailsForm" id="ChangeDetailsForm" novalidate>
+            <div class="list list-inset"> <!--开单信息列表-->
+                <label class="item item-input">
+                    <span class="input-label">{{nowChangeWhat}}</span>
+                    <input type={{ChangeType}} ng-model="ChangeDetailsWhat" value={{ChangeDetailsWhat}} name="ChangeDetailsWhatNow" id="ChangeDetailsWhat"  ng-keyup="ifTelIn()" style="padding-right: 90px" >
+                </label>
+                <span class="posAb" style="top: 11px">
+                        <button class="youCode pr" id="GetChangeDetailsCode" ng-click="ChangeDetailsCode()" ng-class="{true: 'op-active',false: 'o-active'}[CanClickCode]" ng-disabled="CanClickCode">{{description}}&nbsp;<span id="timing">{{second}}</span>s</button>
+                    </span>
+                <label class="item item-input"> <!--验证码-->
+                    <span class="input-label">验证码</span>
+                    <input type="text" id="ChangeDetailsCode" name="ChangeDetailVerCode" ng-keyup="KeyFor()" required>
+                </label>
+
+                <div style="text-align: center;margin-top: 40px">
+                    <button id="ChangeDetails" class="button button-balanced pr" ng-click="ChangeDetailsNow(ChangeDetailsWhat)" ng-disabled="ChangeDetailsCanClick">确定</button>
+                </div>
+            </div>
+        </form>
+
+    </ion-content>
+</ion-view>

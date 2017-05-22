@@ -1,0 +1,43 @@
+<ion-view view-title="配送">
+    <ion-nav-bar class="bar-stable">
+        <ion-nav-back-button>
+            Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content class=" singleDistribution" scroll="true" style="bottom: 132px;"> <!--内容部分-->
+        <ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher> <!--下拉刷新-->
+        <ul class="list">
+            <li class="item pr singleItemI" ng-repeat="data in singleRouteDatas track by $index" >
+            <div class="singleItemWrap pr">
+                <div class="disInBlk" style="width: 70%;">
+                    <h2>{{data.routeDetails.allocationName}}</h2>
+                    <p>{{data.allocationAddress}}</p>
+                    <span class="singleState">未配送</span>
+                </div>
+                <div class="disInBlk pa">
+                    <a type="button" class="smallBtn opacity" ng-click="changeState($index)"></a>
+                </div>
+            </div>
+            <span class="singleBall pa">{{data.allocationSortNo}}</span>
+        </li>
+        </ul>
+    </ion-content>
+
+    <ion-footer-bar class="singleFooter">  <!--底部展示此订单,确认开单按钮-->
+        <div class="singleFooterWrap" >
+              <div class="item pr">
+                  <div class="disInBlk" style="width: 70%;padding-bottom: 0.15rem">
+                      <h2>{{nowSingleRoute.teambuyNeme}}</h2>
+                      <p>{{nowSingleRoute.route[0].routeName}}</p>
+                  </div>
+                  <div class="disInBlk pa" style="right:0;top:0;padding-right: 0.1rem">
+                      <P>配送金额</P>
+                      <p class="disAmount">￥<span>{{nowSingleRoute.currentAmount}}</span></p>
+                  </div>
+                  <div>
+                      <a class="aBtnBig" ng-class="{false:'unsingleDisplay',true:'singleDisplay'}[issingleDisplay]" ng-disabled="!issingleDisplay" ng-click="singleGoDis()">{{bigBtnFt}}</a>
+                  </div>
+              </div>
+        </div>
+    </ion-footer-bar>
+</ion-view>

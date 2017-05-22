@@ -1,0 +1,32 @@
+<ion-view view-title="私信">
+    <ion-nav-bar class="bar-stable" >
+        <ion-nav-back-button>
+            Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content scroll="true" class="padding bgGray padLr ">
+            <ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh()"></ion-refresher>
+            <div class="productComs">
+                <dl  class="oneProductCom" ng-repeat="msgToSomeOne in allMsgToOthers">
+                    <dt>
+                    <div class="fl"><img src="img/shopHome/default_head.png" ng-src="{{msgToSomeOne.user.userImgurl}}" onerror="javascript:this.src='img/shopHome/default_head.png';"/> </div>
+                    <div class="fl">
+                        <p>{{msgToSomeOne.user.consumerInfo.nickname}}</p>
+                        <p><span ng-if="msgToSomeOne.commentUserFlag==2?true:false">Verified Buyer</span></p>
+                    </div>
+                    <div class="fr" style="margin-right: 20px;color: #999;">
+                        {{msgToSomeOne.addTime}}
+                    </div>
+                    </dt>
+                    <dd>
+                        <p class="changWidS"></p>
+                    </dd>
+                    <dd>
+                        {{msgToSomeOne.commentContent}}
+                    </dd>
+                    <a type="button" class="replyMsg" ng-click="goReplyMsg()">{{msgToSomeOne.replysCount}}</a>
+                </dl>
+            </div>
+            <ion-infinite-scroll ng-if="moreDataCanBeLoaded" on-infinite="loadMoreMsgTo()" distance="1%" immediate-check="false"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

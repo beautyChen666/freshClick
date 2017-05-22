@@ -1,0 +1,31 @@
+.deliveryRecords .item p{
+    color: #222;
+}
+.deliveryRecords .item{
+    border: none;
+    padding: 0.1rem;
+    box-sizing: content-box;
+    box-shadow: 0px 0px 3px 2px #ddd;
+    margin-bottom: 0.2rem;
+    border-radius: 0.03rem;
+}
+.DRListHeader{
+    text-align: justify;
+    text-align-last: justify;
+    padding-bottom: 0.06rem;
+    border-bottom: 1px solid #ddd;
+}
+.handDeliverGoodsList{
+    padding-bottom: 0.06rem;
+    border-bottom: 1px solid #ddd;
+}
+.handDeliverGoodsList.row,.handDeliverGoodsList .col{
+    padding: 0;
+}
+.sendGoodsSuccess{
+    display: inline-block;
+    color: #89B247;
+}
+.DRDetails{
+    padding-top: 0.05rem;
+}

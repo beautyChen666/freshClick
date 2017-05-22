@@ -1,0 +1,87 @@
+<ion-view view-title="商品详情">
+    <ion-nav-bar class="bar-stable" >
+        <ion-nav-back-button >
+            Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content  scroll="true" class="isProScroll">
+        <div class="productHeader">
+            <div class="productBigPic">
+                <img src="{{prodcDetlInfor.productLogo}}" />
+            </div>
+            <p class="proNameAd">
+                {{prodcDetlInfor.productName}}
+                <span class="fr proEyeNum">{{prodcDetlInfor.pageView}}</span>
+            </p>
+            <div class="prodNumSome">
+                <p class="clrRed fl" >${{prodcDetlInfor.productPrice}}</p>
+                <ul class="fl">
+                    <li>库存 {{prodcDetlInfor.productInventory}}</li>
+                    <li>已售 {{prodcDetlInfor.currentQuantity}}</li>
+                    <li>单位 {{prodcDetlInfor.productUnit}}</li>
+                </ul>
+            </div>
+            <p class="prodDeIn">{{prodcDetlInfor.productDetail}}</p>
+        </div>
+        <!--订单部分-->
+        <div class="choseBtnToOrder">
+            订单（{{allOrderAmount}}）  <a class=" fr" type="button" ng-click="OchangeOrder()"> more ></a>
+        </div>
+        <div class="productOrders">
+                <dl  class="oneProductOrder" ng-repeat="productTeambuyOrder in
+threeProductTeambuyOrders">
+                    <dt>
+                        <p class="fl"><img ng-src="{{productTeambuyOrder.userImgurl}}"/>
+                        </p>
+                        <p class="fl">
+                            {{productTeambuyOrder.nickName}}
+                        </p>
+                        <p class="fr">
+                            {{productTeambuyOrder.realityReceivingTime}}
+                        </p>
+                    </dt>
+                    <dd>
+                        订单编号
+                        {{productTeambuyOrder.orderDetailId}}
+                    </dd>
+                    <dd>
+                                <span>订单数量{{productTeambuyOrder.productRealityQuantity}}</span>
+                                <span>单价${{productTeambuyOrder.productPrice}}/
+{{productTeambuyOrder.productUnit}}</span>
+                                <span>订单金额${{productTeambuyOrder.productRealityAmount}}</span>
+                    </dd>
+                </dl>
+        </div>
+        <!--评论部分-->
+        <div class="choseBtnToOrder">
+            评论（{{allComAmount}}）  <a type="button" class=" fr" ng-click="OchangeCom()"> more > </a>
+        </div>
+        <div class="productComs">
+            <dl  class="oneProductCom" ng-repeat="productTeambuyCom in
+threeProductTeambuyComs">
+                <dt>
+                    <div class="fl"><img src="{{productTeambuyCom.user.consumerInfo.userImgurl}}"/> </div>
+                    <div class="fl">
+                        <p>{{productTeambuyCom.user.consumerInfo.nickname}}</p>
+                        <p><span ng-if="productTeambuyCom.commentUserFlag==2?true:false">Verified Buyer</span></p>
+                    </div>
+                    <div class="fr padRig">
+                        {{productTeambuyCom.addTime}}
+                    </div>
+                </dt>
+                <dd>
+                    <p class="changWidS"></p>
+                </dd>
+                <dd>
+                    {{productTeambuyCom.commentContent}}
+                </dd>
+                <!--<dd class="replyOther" ng-if="ifReplyMsg">-->
+                    <!--<p class="clrRed">我的回复</p>-->
+                    <!--<p>{{productTeambuyCom.replys[0].replyComment}}</p>-->
+                <!--</dd>-->
+                <a type="button" class="replyMsg" ng-click="goReplyMsgPage()">{{productTeambuyCom.replysCount}}</a>
+            </dl>
+        </div>
+
+    </ion-content>
+</ion-view>

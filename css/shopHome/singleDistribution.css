@@ -1,0 +1,112 @@
+.item, .item h1, .item h2, .item h3, .item h4, .item h5, .item h6, .item p, .item-content, .item-content h1, .item-content h2, .item-content h3, .item-content h4, .item-content h5, .item-content h6, .item-content p{
+    white-space: inherit;
+    overflow:inherit;
+}
+.singleFooter{
+     height: auto;
+}
+/*.singleDistribution{*/
+    /*height: 4.19rem;*/
+/*}*/
+.singleDistribution .item h2{
+    font-size:0.16rem;
+}
+.singleDistribution .item{
+    padding: 0px 6px 18px 0px;
+    border: none;
+    margin-left: 30px;
+}
+.singleDistribution .list{margin-top: 0.15rem}
+.singleFooter .item{
+    border: none;
+    padding:0;
+    width: 100%;
+}
+.singleItemI{
+    border-left:0.03rem solid #B9B9B9 !important;
+}
+.singleItemWrap{
+    width: 90%;
+    left: 8%;
+    border-radius: 0.05rem;
+    padding: 0.1rem;
+    box-shadow:0px 3px 10px 2px #D5D6D3;
+}
+.disInBlk.pa{  /*button定位*/
+    top: 0.35rem;
+    right: 0.1rem;
+}
+.opacity{
+    opacity: 0;
+}
+.unopacity{  /*button是否出现以及样式设置*/
+    display: inline-block;
+    width: 0.6rem;
+    line-height: 0.25rem;
+    border: 1px solid #FFA648;
+    text-align: center;
+    border-radius: 0.2rem;
+    color:#FFA648 ;
+}
+
+.singleBall{  /*小球的设置*/
+    width: 0.25rem;
+    border-radius: 50%;
+    display: block;
+    background: #B9B9B9;
+    line-height: 0.25rem;
+    text-align: center;
+    top: 0;
+    left: -0.14rem;
+    color:#fff;
+}
+.unoverDis{ /*小球样式--已到达*/
+    background: #FFB948;
+}
+.overDis{ /*小球样式--已完成配送*/
+    background: #A6D652;
+}
+
+/*状态的改变样式*/
+.singleState{  /*目前状态*/
+    display: block;
+    padding-top: 0.06rem;
+    color: #9D9D9D;
+}
+.distring{  /* 状态 正在配送*/
+    color: #FFB948;
+}
+.overdisring{  /*完成配送*/
+    color: #A6D652;
+}
+
+.singleFooter{
+    box-shadow: 0 -2px 4px 0 #85AF41;
+
+}
+.singleFooterWrap{  /*脚步开始设置*/
+    padding: 10px;
+    width: 100%;
+}
+.aBtnBig{
+    display: block;
+    width: 80%;
+    margin:0.1rem auto;
+    line-height:0.35rem;
+    text-align: center;
+    border-radius:0.2rem;
+    color: #fff;
+    background-color: #85AF41;
+    font-size: 0.16rem;
+}
+.singleDisplay{  /*开始配送大按钮*/
+    background-color: #A8D853;
+}
+.unsingleDisplay{
+    background-color: #9B9B9B;
+}
+.singleFooterWrap .disAmount{
+    color:#F67117;
+    font-size: 0.16rem;
+}
+

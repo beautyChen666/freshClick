@@ -1,0 +1,29 @@
+<ion-view view-title="配送路线">
+    <ion-nav-bar class="bar-stable" >
+        <ion-nav-back-button>
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content class="has-header distributionRoute"  scroll="true">
+        <ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>
+        <div class="tabs bar-header" style="background: #E9E9E8">
+                <a class="tab-item" style="border-right: 1px solid #B9B9B9"><span class="waitingDisFt disActive"  ng-click="showWaitingDistributions()">等待配送</span></a>
+                <a class="tab-item"><span class="waitingDisFt"  ng-click="showOverDistributions()">配送完成</span></a>
+        </div>
+       <div class="list "> <!--列表-->
+           <ul class="list" style="margin-top: 50px">
+               <li class="disRouteItem" ng-repeat="data in showWaitingDistributionsDatas track by $index"  ng-click="goSingleDis($index)">
+                   <span class="disRouteSpan">
+                        <h3>{{data.teambuyNeme}}</h3>
+                       <p class="disRouteForPadding disRouteForPaddingP">{{data.touteName}}</p>
+                       <p class="disRouteForPadding disRouteForPaddingI"  ng-class="{true:'unselected',false:'selected'}[isSelected]"><i class="ion ion-checkmark-circled" ng-class="{true:'unselected',false:'selected'}[isSelected]"></i>{{routeState}}</p>
+                   </span>
+                   <span class="disRouteSpan disRouteSpanTotal pr">
+                        <span>总金额</span>
+                       <h3 class="disRouteForPadding" style="color: red">￥<span>{{data.currentAmount}}</span></h3>
+                   </span>
+               </li>
+           </ul>
+       </div>
+        <ion-infinite-scroll ng-if="moredata" on-infinite="loadMore()" distance="1%" immediate-check="false"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

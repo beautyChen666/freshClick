@@ -1,0 +1,50 @@
+.oneCusCom{
+    font-size:0.12rem;
+    padding-top:0;
+    padding-bottom: 0;
+    position: relative;
+    margin-top: 0.05rem;
+}
+.oneCusCom p{
+    font-size:0.12rem;
+}
+.oneCusCom div{
+    width:100%;
+    line-height: 0.14rem;
+}
+.oneCusCom .bgBuyed{
+    padding-right:0.2rem;
+    background: url("../../img/manageCustomerCom/VerifiedBuyer@3x.png") no-repeat top right;
+    background-size: 0.16rem 0.16rem;
+}
+.oneCusCom div:nth-of-type(1){
+    width:100%;
+    height:0.3rem;
+    line-height: 0.3rem;
+}
+
+
+/*星星*/
+.changeStar2{
+    width:1rem;
+    height:0.2rem;
+    margin-top:0rem;
+    background: url("../../img/star/00@3x.png") no-repeat 0rem 0.02rem;
+    background-size: 0.5rem 0.1rem;
+}
+.fiveS p .changeW2{
+    margin-left:0rem;
+    width:0.35rem;
+    display: inline-block;
+    overflow: hidden;
+    height:0.2rem;
+    background: url("../../img/star/000@3x.png") no-repeat 0rem 0.02rem ;
+    background-size: 0.5rem 0.1rem;
+}
+.fiveS p .blueCo2{
+    display: inline-block;
+    height:0.2rem;
+    line-height: 0.2rem;
+    margin-left:0.1rem;
+    color:#4b8bf4;
+}

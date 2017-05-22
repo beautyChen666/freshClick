@@ -1,0 +1,63 @@
+/*单个页面修改通用样式*/
+.openShopSide{
+    width: 3.2rem;!important;
+}
+.OpenShopContent{
+    height:100%;
+}
+.OpenShopContent.scroll-content{
+    height:100%;
+}
+.OpenShopContent .OStitle{
+    width: 0.6rem;
+}
+.OpenShopContent .item,.OpenShopContent .input-label{
+    font-size: 0.12rem;
+}
+.OpenShopContent .item{
+    padding: 0.1rem;
+    /*height:0.32rem;*/
+}
+.OpenShopContent .imgUp{
+    height:0.8rem;
+}
+.OpenShopContent .item-input{
+    padding: 0px 0 0px 16px;
+}
+.OpenShopContent .item-input span{
+    line-height:0.35rem;
+}
+#ChangeDetailsForm .item,#OpenShopForm .item,.distributionRoute .item{
+    border-width: 0px;
+    border-bottom-width: 1px;
+    margin: 0px;
+    color:#6f6f6f;
+}
+#OpenShopEmail{
+    height:0.3rem;
+    line-height: 0.3rem;
+}
+#ChangeDetailsForm .input-label,#OpenShopForm .input-label{width: auto;color:#6f6f6f;}
+#ChangeDetailsForm .button.button-balanced,#OpenShopForm .button.button-balanced{
+    background-color:#85AF41;
+    color: #FFFFFF;
+    font-size: 0.14rem;
+    width: 1.4rem;
+    border-radius: 0.2rem;
+}
+/*邮箱电话是否被验证*/
+.isConfirmed{
+
+}
+#OpenShopForm{font-family: "icon"; }
+.checkbox input:checked+.checkbox-icon:before, .checkbox input:checked:before{
+    background:#A8D853;
+    border-color:#A8D853;
+}
+.forClickInputChange{
+    position: absolute;
+    right: 1%;
+}
+.op-active{
+    opacity: 0.5 !important;
+}

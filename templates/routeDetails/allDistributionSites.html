@@ -1,0 +1,44 @@
+<ion-view>
+    <ion-header-bar align-title="center" class="productDetailsHomeHeader">
+        <div class="buttons">
+            <a class="button" ng-click="ionicGoBack()"><i class="ion ion-ios-arrow-back" style="font-size: 20px"></i></a>
+        </div>
+        <h1 class="title">所有配送点</h1>
+        <div class="buttons">
+            <a type="button" class="OIallChoose" ng-click="OIchooseAll()">全选</a>
+        </div>
+    </ion-header-bar>
+    <div class="allDistributionSites">
+        <div class="allDistributionSitesHeader">
+            <div class="list list-inset">
+                <label class="item item-input pr">
+                    <i class="icon ion-search placeholder-icon Big"></i>
+                    <input type="text" id="searchAllSites" placeholder="请输入站点名信息查询" ng-model="nowSearchOrders">
+                </label>
+                <i class="icon ion-ios-close-outline cancelAll" ng-click="cancelAll()"></i>
+            </div>
+        </div>
+        <ion-content class="allDistributionSitesCont padding">
+            <ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>
+        <ul class="list allDistributionSitesUl scroll" srcoll="true">
+          <li class="item" ng-repeat="data in allDistributionSitesDatas|filterSearch:nowSearchOrders track by $index"    on-finish-render-filters="onFinishRenderFilters">
+              <label class="checkbox vb">
+                  <input type="checkbox" class="productListCheck" ng-click="allSitesCheck(data)" ng-checked="data.flag">
+              </label>
+              <div class="dlb allSitesDiv">
+                  <span>站点名:{{data.allocationName}}</span><br>
+                  <span>地址:{{data.allocationAddress}}</span>
+              </div>
+          </li>
+
+        </ul>
+
+    <ion-infinite-scroll ng-if="moredata" on-infinite="loadMore()" distance="1%" immediate-check="false"></ion-infinite-scroll>
+    </ion-content>
+    </div>
+    <ion-footer-bar class="bar bar-footer detailsOnLineFooter">
+        <div class="wAll">
+            <a class="aBtnBig" ng-click="submitAllLineSites()">确认</a>
+        </div>
+    </ion-footer-bar>
+</ion-view>

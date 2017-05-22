@@ -1,0 +1,91 @@
+/*登录页面样式*/
+#bigBg{
+  background: url(../img/login/bg.png) no-repeat top left;
+  background-size: 100%;
+}
+.loginWrap{
+  width:100%;
+  height:100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing:border-box;;
+  /*display: flex;*/
+  /*flex-direction: column;*/
+}
+#smallLogo{
+  width:100%;
+  height:2.46rem;
+  position: relative;
+}
+#smallLogo img{
+  width:1.42rem;
+  height:0.42rem;
+  position: absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  padding:0;
+  margin:auto;
+
+}
+
+#loginForm{
+  font-family: "icon";
+  width:100%;
+  height:1.88rem;
+  padding:0 0.3rem;
+  color:#ffffff;
+}
+
+.marginBtm{
+  margin-bottom: 0.1rem;
+  height:0.3rem;
+  border:1px solid #ffffff;
+  border-radius: 0.15rem;
+  background: #dbdd79;
+  color:#ffffff;
+}
+.iconF{
+  display: inline-block;
+  width:0.38rem;
+  color:#ffffff;
+  text-align: center;
+}
+
+
+#loginForm .lab{
+  width:0.5rem;
+  color:#ffffff;
+}
+#loginForm .toOther{
+  height:0.32rem;
+  padding:0 0.26rem;
+  color:#ffffff;
+}
+#loGin{
+  width:100%;
+  height:0.35rem;
+  line-height: 0.35rem;
+  display: block;
+  border:0;
+  border-radius: 0.2rem;
+  background: #f7aa20;
+}
+.cloW{
+  color:#ffffff;
+}
+
+#otherLogin{
+  width:100%;
+  height:1.34rem;
+  color:#ffffff;
+  padding:0 0.96rem;
+}
+#otherLogin img{
+  width:0.53rem;
+  height:0.53rem;
+}
+#loginForm .button{
+  min-height: 0.35rem;
+}

@@ -1,0 +1,25 @@
+.storeRouteItems{
+    height:83px;
+}
+.item-radio{
+    padding: 0 0.1rem;
+}
+.item-radio .radio-icon{
+    color: #4cd964;
+    top: 0.2rem;
+}
+
+.scroll-view.scroll-x{
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.isradioActive{
+    visibility: visible; !important;
+}
+.item-radio .item-content{
+    width: 90%;
+    padding: 0.06rem;
+}
+.item-content .row{
+    padding: 0;
+}

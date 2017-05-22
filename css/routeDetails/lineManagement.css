@@ -1,0 +1,50 @@
+.lineManagement{
+    font-weight: 700;
+}
+.lineManagement .list{
+    box-shadow:0px 0px 3px 2px #dddddd;
+    -webkit-border-radius:0.1rem;
+    -moz-border-radius:0.1rem;
+    border-radius:0.1rem;
+    padding:0 0.1rem;
+}
+.lineManagement .item{
+    border-right: none;
+    border-left: none;
+    padding: 0.09rem;
+}
+.lineManagement .colorGray{
+    color: #7A7A7A;
+    font-weight: 500;
+    font-size: 0.13rem;
+}
+.lineManagement .col{
+    padding: 0;
+    margin: 0;
+}
+.colorOrange{
+    color: #FFAA51;
+    font-weight: 500;
+    font-size: 0.13rem;
+}
+.listUl{
+    /*padding: 0  0.1rem;*/
+}
+.lineManagementFooter{
+    background-color: #85AF41;
+    height:auto;
+    font-size: 0.14rem;
+    /*padding: 0;*/
+    /*padding-bottom: 19px;*/
+}
+.lineManagementFooterDiv{
+    color: #fff;
+    margin: 0 auto;
+
+}
+.colorGreen{  /*启用状态*/
+    color: #85AF41;
+}
+.colorGray{  /*禁用状态*/
+    color: #7A7A7A;
+}

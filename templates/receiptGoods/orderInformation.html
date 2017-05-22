@@ -1,0 +1,169 @@
+<ion-view view-title="发货信息">
+    <ion-nav-bar class="bar-stable">
+        <ion-nav-back-button>
+            Back
+        </ion-nav-back-button>
+        <ion-nav-buttons side="right">
+            <a type="button" class="OIallChoose" ng-click="OIchooseAll()">全选</a>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <!--<ion-content class="orderInformation">-->
+        <!--<ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>-->
+        <!--<div class="list titleDiv">-->
+            <!--<label class="item item-input">-->
+                <!--<span class="">订单号: &nbsp;</span>-->
+                <!--<span>111</span>-->
+            <!--</label>-->
+            <!--<label class="item item-input">-->
+                <!--<span class="">用户名: &nbsp;</span>-->
+                <!--<span>22</span>-->
+            <!--</label>-->
+        <!--</div>-->
+        <!--<div>-->
+            <!--<ul class="list">-->
+                <!--<li class="item item-checkbox"on-finish-render-filters="onFinishRenderFilters">-->
+                    <!--<p class="pr OITitle" >-->
+                        <!--<span class="orangeFt">商品名</span>-->
+                        <!--<span class="tj dlb" style="width: 80%">-->
+                            <!--<span class="dlb goodsNmae">11</span>-->
+                            <!--<span class="dlb goodsForSending">待发货</span>-->
+                        <!--</span>-->
+                    <!--</p>-->
+                    <!--<label class="checkbox">-->
+                        <!--<input type="checkbox" class="productListCheck" ng-click="isChecked($index,$event)" >-->
+                    <!--</label>-->
+                    <!--<div>-->
+                        <!--<img class="dlb OIimg" src="img/receiptGoods/appler.png" alt="">-->
+                        <!--<div  class="dlb" style="font-size: 0.12rem;width: 65%;">-->
+                            <!--<table class="table">-->
+                                <!--<tr class="orangeFt">-->
+                                    <!--<td class="td tc">价格</td>-->
+                                    <!--<td class="td tc">购买数量</td>-->
+                                    <!--<td class="td tc">总金额</td>-->
+                                <!--</tr>-->
+                                <!--<tr class="tableBorder">-->
+                                    <!--<td class="td tc">11</td>-->
+                                    <!--<td class="td tc">11</td>-->
+                                    <!--<td class="td tc">11</td>-->
+                                <!--</tr>-->
+                                <!--<tr class="orangeFt">-->
+                                    <!--<td class="td tc"></td>-->
+                                    <!--<td class="td tc">实际数量</td>-->
+                                    <!--<td class="td tc">实际金额</td>-->
+                                <!--</tr>-->
+                                <!--<tr>-->
+                                    <!--<td class="td tc"></td>-->
+                                    <!--<td class="td tc">11</td>-->
+                                    <!--<td class="td tc">11</td>-->
+                                <!--</tr>-->
+                            <!--</table>-->
+                            <!--<div class="tr">-->
+                                <!--<a type="button" class="OISmallBtn" ng-click="changeNum($index)">修改数量</a>-->
+                            <!--</div>-->
+
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+        <!--<ion-infinite-scroll ng-if="moredata" on-infinite="loadMore()" distance="1%"  immediate-check="false"></ion-infinite-scroll>-->
+    <!--</ion-content>  &lt;!&ndash;内容&ndash;&gt;-->
+    <ion-content class="orderInformation">
+        <ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>
+        <div class="list titleDiv">
+            <label class="item item-input">
+                <span class="">订单号: &nbsp;</span>
+                <span>{{wrapDatas.orderId}}</span>
+            </label>
+            <label class="item item-input">
+                <span class="">用户名: &nbsp;</span>
+                <span>{{wrapDatas.customerInfo.nickname||wrapDatas.customerInfo.email}}</span>
+            </label>
+        </div>
+        <div>
+            <ul class="list">
+                <li class="item item-checkbox"  ng-repeat="data in orderInformationDatas track by $index" on-finish-render-filters="onFinishRenderFilters">
+                    <p class="pr OITitle" >
+                        <span class="orangeFt">商品名</span>
+                        <span class="tj dlb" style="width: 80%">
+                            <span class="dlb goodsNmae">{{data.teambuyProduct.productName}}</span>
+                            <span class="dlb goodsForSending">待发货</span>
+                        </span>
+                    </p>
+                    <label class="checkbox">
+                        <input type="checkbox" class="productListCheck" ng-click="isChecked($index,$event)" >
+                    </label>
+                    <div>
+                        <img class="dlb OIimg" src="img/receiptGoods/appler.png" alt="">
+                        <div  class="dlb" style="font-size: 0.12rem;width: 65%;">
+                            <table class="table">
+                                <tr class="orangeFt">
+                                    <td class="td tc">价格</td>
+                                    <td class="td tc">购买数量</td>
+                                    <td class="td tc">总金额</td>
+                                </tr>
+                                <tr class="tableBorder">
+                                    <td class="td tc">{{data.productPrice}}</td>
+                                    <td class="td tc">{{data.productQuantity}}{{data.productUnit}}</td>
+                                    <td class="td tc">￥{{data.productAmount}}</td>
+                                </tr>
+                                <tr class="orangeFt">
+                                    <td class="td tc"></td>
+                                    <td class="td tc">实际数量</td>
+                                    <td class="td tc">实际金额</td>
+                                </tr>
+                                <tr>
+                                    <td class="td tc"></td>
+                                    <td class="td tc">{{data.productRealityQuantity}}{{data.productUnit}}</td>
+                                    <td class="td tc">￥{{data.productRealityAmount}}</td>
+                                </tr>
+                            </table>
+                            <div class="tr">
+                                <a type="button" class="OISmallBtn" ng-click="changeNum($index)">修改数量</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </ion-content>  <!--内容-->
+    <ion-footer-bar class="bar bar-footer" style="height:0.78rem;">  <!--底部按钮-->
+        <a type="button" class="aBtnBig OIbtn" ng-click="showPopup()">确认发货</a>
+    </ion-footer-bar>
+
+    <script id="comfirmeGoods.html" type="text/ng-template">
+        <div class="conAlertBg pr">
+            <a type="button" class="pa conClose" ng-click="closeShowPopup()">
+                <i class="ion ion-close ion-arrow-right"></i>
+            </a>
+            <p class="">
+                <span class="pa conImg"><img src="img/receiptGoods/conBox.png" alt="loading..."></span>
+            </p>
+        </div>
+        <div id="changeShow">
+            <p class="tc conP">此订单是否确认发货?</p>
+            <div>
+                <a type="button" class="aBtnBig OIbtn" ng-click="finallySendGoods()">确认发货</a>
+            </div>
+        </div>
+    </script>
+
+    <script id="changeNum.html" type="text/ng-template">
+        <div class="conAlertBg pr">
+            <a type="button" class="pa conClose" ng-click="closeChangeNum()">
+                <i class="ion ion-close ion-arrow-right"></i>
+            </a>
+        </div>
+        <div>
+            <p class="tc conP">商品名称: <span>{{bouncedName}}</span></p>
+            <div class="changeNumDiv">
+                <span>修改数量</span>
+                <input name="number" type="number" id="nowOrderNum" value={{bouncedNum}} />
+            </div>
+            <div>
+                <a type="button" class="aBtnBig OIbtn" ng-click="goChangeOrderNum()">确认</a>
+            </div>
+        </div>
+    </script>
+</ion-view>

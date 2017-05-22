@@ -1,0 +1,96 @@
+/*用户信息填写*/
+.yourPhoto{
+  width:100%;
+  height:1.23rem;
+  padding:0.24rem  0 0 1.2rem;
+}
+.photoBor{
+  width:0.8rem;
+  height:0.8rem;
+  border:1px solid #9e9e9e;
+  border-radius:0.4rem ;
+  overflow: hidden;
+}
+.photoBor img{
+  height:0.8rem;
+  width:0.8rem;
+  border:0;
+}
+.nickName{
+  width:0.8rem;
+  text-align: center;
+  font-size: 0.14rem;
+}
+.yourInformation{
+  padding:0 0.3rem;
+  height:3.23rem;
+  border:0;
+}
+#inforForm .colorB{
+  width:0.6rem;
+  display: inline-block;
+  color:#010101;
+  font-size: 0.14rem;
+}
+.borderB{
+  border:0;
+  height: 0.42rem;
+  border-bottom: solid 1px #8f8f8f;
+  margin:0;
+}
+.nextBtn{
+  padding:0 0.3rem;
+}
+.button.button-block, .button.button-full{
+  margin:0;
+}
+.button{
+  min-height:0.34rem;
+  line-height:0.34rem;
+  font-size: 0.18rem;
+}
+.subStyle{
+  width:2.6rem;
+  height:0.34rem;
+  line-height: 0.34rem;
+  border-radius: 0.2rem;
+
+}
+.mustC{
+  background: url("../img/icons/start.png") no-repeat 0.3rem 0.12rem;
+  background-size: 0.1rem 0.1rem;
+  display: inline-block;
+}
+.posAbo{
+  position: absolute;
+  right:0;
+  top:0.1rem;
+  font-size:0.12rem;
+  z-index:9999;
+}
+.mustBg{
+  background: url("../img/icons/start.png") no-repeat 0.4rem 0.14rem;
+  background-size: 0.1rem 0.1rem;
+  display: inline-block;
+}
+.labelW{
+  height:0.42rem;
+}
+.pA,.pb{
+  border:0;
+  position: absolute;
+  right:0rem;
+  top:8px;
+  padding: 10px 10px 10px 20px;
+  font-size: 13px;
+  z-index:9999;
+  color:#4cd964;
+  background-color: transparent;
+}
+.pb{
+  top:5px;
+  font-size: 20px;
+}
+#forEmailE{
+  height:100%;
+}

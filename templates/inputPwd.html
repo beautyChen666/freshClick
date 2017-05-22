@@ -1,0 +1,34 @@
+<ion-view view-title="确认密码">
+    <ion-nav-bar class="bar-stable" >
+        <ion-nav-back-button >
+            Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content  scroll="false">
+        <div class="list " id="myPwdForm" >
+            <form   name="myForm3" novalidate>
+                <!--输入密码-->
+                <div class="labelWrap">
+                    <label class="item item-input borderBtm">
+                        <span class="iconFt">&#xe65c;</span>
+                        <span class="input-label paddingLf">设置密码</span>
+                        <input  type="password" name="password1" ng-model="password1" required id="password1" class="inpWid" placeholder="6~18位字母、数字和特殊字符" ng-change="pwdCheck()">
+                    </label>
+                </div>
+                <!--确认密码-->
+                <div class="labelWrap">
+                    <label class="item item-input borderBtm" >
+                        <span class="iconFt">&#xe65c;</span>
+                        <span class="input-label paddingLf">确认密码</span>
+                        <input  type="password" name="password2" ng-model="password2" id="password2" required ng-change="pwdCheck1()" class="inpWid" placeholder="密码须填写一致">
+                    </label>
+                </div>
+                <div  class="padding">
+                    <a class="button button-block button-balanced borderRa"
+                       ng-disabled="canClick2||canClick1"
+                       type="submit" ng-click="upDataNewPwd()" >确认重设</a>
+                </div>
+            </form>
+        </div>
+    </ion-content>
+</ion-view>

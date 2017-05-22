@@ -1,0 +1,112 @@
+/*注册页面样式表*/
+#myReForm,#myPwdForm,#myFgtForm{
+  font-family: "icon";
+  padding:0.4rem 0.1rem;
+}
+
+.labelWrap{
+  padding:0;
+  height:0.60rem;
+}
+.borderBtm{
+  width:100%;
+  height:0.34rem;
+  border:none;
+  border-bottom: 1px solid #dddddd;
+  padding:0;
+  position: relative;
+}
+.iconFt{
+  width:0.4rem;
+  font-size: 0.2rem;
+  text-align: center;
+}
+.alertc{
+  position: absolute;
+  right:0;
+  padding:3px;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #FFFFFF;
+  background-color: #f79074;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+}
+.paddingLf{
+  padding:0;
+  width:0.7rem;
+  font-size:0.14rem;
+  text-align: left;
+  color:#8f8f8f;
+}
+.inpWid{
+  width:1.8rem;
+  font-size: 0.12rem;
+}
+/*修改源码*/
+input[type="password"]{
+  font-size: 0.12rem;
+}
+input[type="text"]{
+ color: #4d4d4d;
+}
+.mustColor{
+  background: url("../img/icons/start.png") no-repeat 0.3rem 0.05rem;
+  background-size: 0.1rem 0.1rem;
+  display: inline-block;
+
+}
+
+.waInfo{
+  display: inline-block;
+  background: #f79074;
+  font-size:20px;
+  color:#ffffff;
+  width:0.2rem;
+  height:0.2rem;
+  border-radius: 0.1rem;
+  text-align: center;
+  position: absolute;
+  right:0;
+}
+
+#minWidth{
+  width:0.8rem;
+}
+.posRl{
+  position: relative;
+}
+.posAb{
+  position: absolute;
+  top:0;
+  right:0;
+  font-size:0.12rem;
+  z-index:9999;
+}
+.youCode{
+  display: inline-block;
+  padding:0 0.05rem;
+  text-align: center;
+  height:0.26rem;
+  line-height: 0.26rem;
+  border-radius: 0.1rem;
+  background: #f7aa20;
+  color:#ffffff;
+  font-size: 0.09rem;
+  border:0;
+
+}
+.waIn{
+  color: #f79074;
+  font-size: 0.09rem;
+}
+.borderRa{
+  border-radius: 0.2rem;
+  height: 0.35rem;
+  line-height: 0.35rem;
+  font-size:0.20rem;
+}
+.changeOpacity{
+  opacity: 0.5;
+}

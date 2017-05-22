@@ -1,0 +1,41 @@
+<ion-view view-title="手动发货">
+    <ion-nav-bar class="bar-stable">
+        <ion-nav-back-button>
+            Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <div class="bar bar-subheader handDeliverGoodsHeader" style="height: 50px;">
+        <div class="list list-inset">
+            <label class="item item-input">
+                <i class="icon ion-search placeholder-icon Big"></i>
+                <input type="text" id="search" placeholder="请输入订单号" ng-keyup="goSearchOrders()" ng-model="nowSearchOrders">
+            </label>
+        </div>
+    </div>
+    <ion-content class="handDeliverGoods has-subheader">
+        <ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>
+        <div class="handDeliverGoodsMain">
+            <ul class="list">
+                <li class="item" ng-repeat="data in handDeliverGoodsDatas">
+                    <div class="handDeliverGoodsList row">
+                        <div class="col-65">
+                            <span>订单号:</span>
+                            <sapn>{{data.orderId}}</sapn>
+                        </div>
+                        <div class="col tr" style="color: #FCA230">待发货</div>
+                    </div>
+                    <div class="handDeliverGoodsList noBoreder row">
+                        <div class="col-65">
+                            <span>用户名:</span>
+                            <sapn>{{data.customerInfo.nickname||data.customerInfo.email}}</sapn>
+                        </div>
+                        <div class="col tr">
+                            <a type="button" class="isSendSmall dlb"  ng-click="goOrderInformation($index)"><span class="dlb pr">确认发货</span></a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <ion-infinite-scroll ng-if="moredata" on-infinite="loadMore()" distance="1%"  immediate-check="false"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

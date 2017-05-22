@@ -1,0 +1,47 @@
+
+<ion-view view-title="注册">
+    <!--注册页面头部-->
+    <ion-nav-bar class="bar-stable" >
+        <ion-nav-back-button >
+            Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content >
+        <!--注册页面主要内容区-->
+        <div class="list " id="myReForm" >
+            <form   name="myForm" novalidate>
+                <!--输入邮箱-->
+                <div class="labelWrap">
+                    <label class="item item-input borderBtm">
+                        <span class="iconFt">&#xe630;</span>
+                        <span class="input-label paddingLf mustColor">邮箱</span>
+                        <input  type="email" placeholder="john.doe@gmail.com"  ng-model="email" id="email" ng-keyup="pwdCheck2()">
+                    </label>
+                </div>
+                <!--输入密码-->
+                <div class="labelWrap">
+                    <label class="item item-input borderBtm">
+                        <span class="iconFt">&#xe65c;</span>
+                        <span class="input-label paddingLf">密码</span>
+                        <input  type="password" name="password1" ng-model="password1" required id="password1" class="inpWid" placeholder="6~18位字母、数字和特殊字符" ng-change="pwdCheck()">
+                    </label>
+                </div>
+                <!--确认密码-->
+                <div class="labelWrap">
+                    <label class="item item-input borderBtm" >
+                        <span class="iconFt">&#xe65c;</span>
+                        <span class="input-label paddingLf">确认密码</span>
+                        <input  type="password" name="password2" ng-model="password2" id="password2" required ng-change="pwdCheck1()" class="inpWid" placeholder="密码须填写一致">
+                    </label>
+                </div>
+                <!--注册按钮-->
+                <div  class="padding">
+                    <a class="button button-block button-balanced borderRa"  type="submit"
+                       ng-disabled="canClick1||canClick2||canClick3"
+                       ng-click="getRegister()" id="goRegistr" >注册</a>
+                </div>
+            </form>
+        </div>
+    </ion-content>
+</ion-view>
+

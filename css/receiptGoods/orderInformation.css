@@ -1,0 +1,130 @@
+.orderInformation .OIimg{
+    vertical-align: top;
+}
+.orderInformation .item{
+    padding: 0.03rem 0.07rem 0.03rem 0.55rem;
+    border: none;
+    box-shadow:0px 0px 3px 1px #e6e4e4;
+}
+.list.titleDiv{
+    margin-bottom: 0.01rem;
+}
+.titleDiv>.item{
+    padding: 0.07rem 0;
+    padding-left: 0.12rem;
+}
+.OIcheck>li{
+    padding: 0.05rem 0;
+}
+.OIcheck>li:first-child{
+    color: #FFA342;
+    border-bottom: 1px solid #d1d3d6;
+}
+.OIcheck>li:last-child{
+    color:#FC3A1C ;
+}
+.item-checkbox{
+    margin: 0.06rem 0;
+}
+.OIallChoose{  /*全选按钮*/
+    line-height: 35px;
+    font-size: 0.13rem;
+}
+.OIbtn{  /*确认按钮*/
+    background-color: #85AF41;
+    height: 42px;
+    font-size: 0.15rem;
+}
+.checkbox input:disabled:checked+.checkbox-icon:before, .checkbox input:disabled:checked:before{   /*cehckbox按钮不选中状态*/
+    background:#D8D8D8;
+    border-color:#D8D8D8;
+}
+.isSecelct>li:last-child{
+    color: #797979 ;
+}
+
+
+.table{
+    width: 100%;
+    /*border-collapse:separate;*/
+    border-spacing:1px;
+}
+.td{
+    width: 34.3333%;
+}
+.table tr{
+    line-height: 0.2rem;
+}
+.OITitle{   /*每哥item头部展示商品和状态*/
+    left: -60px;
+    width: 3.2rem;
+    padding: 0.1rem;
+}
+.table .tableBorder{
+    border-bottom: 1px solid #ddd;
+    border-spacing:1px;
+    height: 0.25rem;
+}
+.orangeFt{
+    color: #FFA342;
+}
+.goodsNmae{
+    font-size: 0.15rem ;
+}
+.goodsForSending{  /*未发货状态*/
+    color:#FC3A1C ;
+}
+.goodsSended{  /*已收货*/
+    color: #797979 ;
+}
+.OISmallBtn{
+    display: inline-block;
+    margin:0.1rem auto;
+    line-height:0.3rem;
+    text-align: center;
+    border-radius:0.2rem;
+    color: #fff;
+    background-color: #85AF41;
+    width: 0.7rem;
+}
+.OISmallBtnUn{
+    background:#D8D8D8;
+}
+.popup-head,.popup-body{  /*弹框的设置*/
+    padding: 0;
+    overflow: inherit;
+}
+.conAlertBg{
+    height: 0.8rem;
+    background-image: url("../../img/receiptGoods/confirBG.png");
+}
+.conImg{
+    top: -0.4rem;
+    left: 28%;
+}
+.conImg>img{
+    width: 1rem;
+}
+.popup{
+    border-radius: 0.08rem;
+}
+.conP{
+    padding: 0.1rem 0;
+    font-size: 0.13rem;
+}
+.conClose{
+    top:3%;
+    right: 3%;
+}
+.conClose>i{
+    font-size: 0.15rem;
+    color: #fffdef;
+}
+.changeNumDiv{
+    padding:0 0.1rem;
+}
+input[type=number],input[type=tel]{
+    border: 1px solid #ddd;
+    background-color: #edecec;
+    padding-left: 0.05rem;
+}

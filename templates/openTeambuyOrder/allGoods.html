@@ -1,0 +1,76 @@
+<ion-view>
+    <ion-header-bar align-title="center" class="productDetailsHomeHeader">
+        <div class="buttons"  ng-click="ionicGoBack()">
+            <a class="button" ><i class="ion ion-ios-arrow-back ft20"></i></a>
+        </div>
+        <h1 class="title">所有商品</h1>
+        <div class="buttons" ng-click="openPopover($event)">
+            <a class="button" ><i class="ion ion-plus-round ft20"></i></a>
+        </div>
+    </ion-header-bar>
+    <div class="bar bar-subheader allSubH">
+        <ion-scroll direction="x" scrollbar-x="false" delegate-handle="s_header" style="width: 100%">
+            <div class="button-bar sub_header_catgorylist" id="sub_header_list" style="height: 100%">
+                <!--<a class="subheaderA tc" >分类</a>-->
+                <a class="subheaderA tc subheaderActive" ng-click="subheaderChangeLabelAll()">全部</a>
+                <a class="subheaderA tc" ng-repeat="subData in categoryNameDatas track by $index" ng-click="subheaderChangeLabel($index)">{{subData.categoryName}}</a>
+            </div>
+        </ion-scroll>
+    </div>
+    <ion-content class="has-footer has-subheader bgCont allGoodsCt" scroll="true">
+        <ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>
+        <ul class="list">
+            <li class="item item-checkbox borderNone"  ng-repeat="data in getListOfCommoditiesDatas track by $index">
+                <label class="checkbox">
+                    <input type="checkbox" class="productListCheck" ng-click="isChecked(data)" ng-checked="data.flag">
+                </label>
+                <div>
+                    <img class="dlb OIimg va" src="img/receiptGoods/appler.png" alt="">
+                    <div  class="dlb" style="font-size: 0.12rem;width:66%;">
+                        <table class="table">
+                            <tr class="orangeFt tableBorder">
+                                <td  class="left_one  td tc">商品名</td>
+                                <td class="other_middle td tc">库存</td>
+                                <td class="other_td td tc">价格</td>
+                            </tr>
+                            <tr class="bottom_tr">
+                                <td class="td tc">{{data.productName}}</td>
+                                <td class="td tc">{{data.productInventory}}{{data.productUnit}}</td>
+                                <td class="td tc">{{data.productPrice}}/{{data.productUnit}}</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td class="tc colorOO" ng-click="toEdit(data)">编辑</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!--<ion-option-button class="button-assertive bgGreen f16" ng-click="toEdit(data)">编辑</ion-option-button>-->
+            </li>
+        </ul>
+    </ion-content>
+
+    <ion-footer-bar class="padding0" >
+        <div class="row padding0">
+            <div class="col col-75">
+                <label class="checkbox vm">
+                    <input type="checkbox" ng-click="OIchooseAll()"  class="TproductListCheck_button" >
+                </label>
+                <span  class="tc dlb" style="line-height: 0.33rem">全选</span>
+            </div>
+            <div class="col padding0">
+                <a type="button" class="foot_button_add f16" ng-click="addGoodsHere()" style="line-height: 44px">确定</a>
+            </div>
+        </div>
+    </ion-footer-bar>
+    <script id="my-popover.html" type="text/ng-template">
+        <ion-popover-view style="height: 100px;width: 130px;top: 42px;left: 242px">
+            <ion-content class="padding" style="border-radius: 4px">
+                <div class="tc popoverDiv1" ng-click="addGoods()">
+                    <img src="img/addProducts/addGoods.png" alt="loading..." class="dlb vb"  style="width:18px">&nbsp;&nbsp;   <a class="dlb f16">添加商品</a>
+                </div>
+            </ion-content>
+        </ion-popover-view>
+    </script>
+</ion-view>

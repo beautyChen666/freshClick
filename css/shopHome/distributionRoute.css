@@ -1,0 +1,52 @@
+.distributionRoute .list{
+    font-size: 0.14rem;
+}
+.distributionRoute .tab-item{
+    font-size: 0.12rem;
+    max-width: 200px;
+}
+.disRouteItem{
+    border-bottom: 1px solid darkgray;
+    text-align: center;
+    margin: 0 10px;
+    padding: 6px 0;
+}
+.disRouteSpan{
+    display: inline-block;
+    width: 49%;
+}
+.disRouteSpan h3{
+    font-weight: 400;
+}
+/*.disRouteSpanTotal{text-align: center}/*/
+.tabs.bar-header{
+    padding-top: 0px;
+}
+.disRouteForPadding{
+    padding-top: 0.04rem;
+}
+.disRouteForPadding{
+    vertical-align: bottom;
+}
+.waitingDisFt{  /*未配送和已配送设置*/
+    display: block;
+    margin: 0 0.2rem;
+}
+.disActive{  /*被选中的tabs*/
+    height: 47px;
+    color: green;
+    border-bottom: 2px solid green;
+}
+.disRouteSpanTotal{ /*总金额*/
+  top:-10px;
+}
+.disRouteSpanTotal>span,.selected{ /*总金额的颜色*/
+    color: #CACACA;
+}
+.unselected{
+    color: #8ED261;
+}
+.disRouteForPaddingI>i{
+    font-size:20px;
+    vertical-align: bottom
+}

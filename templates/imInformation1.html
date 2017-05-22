@@ -1,0 +1,61 @@
+
+<ion-view view-title="{{inforTitle}}">
+    <!--用户完善信息页面头部-->
+    <ion-nav-bar class="bar-stable" >
+        <ion-nav-back-button >
+            Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>
+
+        <!--用户完善信息页面主要内容区-->
+
+        <div class="yourPhoto">
+            <p class="photoBor"><a><img ng-src="{{initSrc||img/information/add.png}}" ng-click="uploadImgs()"/></a></p>
+        </div>
+        <div class="yourInformation">
+            <form id="inforForm">
+                <div class="list">
+                    <div class="labelW posRl">
+                        <label class="item item-input borderB">
+                            <span class="input-label colorB" >邮箱</span>
+                            <input id="userEmail" type="text"  disabled="disabled" ng-keyup="pwdCheck()" value="{{userEmail}}" style="background-color: transparent"/>
+                        </label>
+                        <button class="pA"  ng-if="hideEo">已验证</button>
+                        <button class="pA"  ng-if="!hideEo" ng-click="goChangeE('email')">去验证</button>
+                    </div>
+                    <label class="item item-input borderB">
+                        <span class="input-label colorB mustC" >邮编</span>
+                        <input type="text"  id="inforZipcode" placeholder="61000" ng-keyup="ifSubDis()"  value="{{zipCode}}">
+                    </label>
+                    <div class="label posRl">
+                        <label class="item item-input borderB">
+                            <span class="input-label colorB "  >电话</span>
+                            <input type="text" id="telphone" ng-change="ifTelIn()" ng-model="telphone" ng-value="mobile">
+                        </label>
+                        <i class="icon ion-chevron-right pb" ng-click="goChangeT('tel')"></i>
+                    </div>
+                    <label class="item item-input borderB">
+                        <span class="input-label colorB" >名</span>
+                        <input type="text" placeholder="" id="inforFirstName" value="{{userFirstName}}">
+                    </label>
+                    <label class="item item-input borderB">
+                        <span class="input-label colorB" >姓</span>
+                        <input type="text" placeholder="" id="inforLastName" value="{{userLastName}}">
+                    </label>
+
+                    <label class="item item-input borderB">
+                        <span class="input-label colorB" >昵称</span>
+                        <input type="text" placeholder="" id="inforNickName" value="{{userNickName}}">
+                    </label>
+                </div>
+            </form>
+        </div>
+        <div class="nextBtn">
+            <a class="button button-block button-balanced subStyle"  type="submit"
+               ng-disabled="canClick1||canClick2"
+               ng-click="sunbmitInformation()">提交</a>
+        </div>
+    </ion-content>
+</ion-view>
+

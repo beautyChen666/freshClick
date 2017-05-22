@@ -1,0 +1,68 @@
+
+<ion-view view-title="完善信息">
+    <!--用户完善信息页面头部-->
+    <ion-nav-bar class="bar-stable">
+        <ion-nav-back-button >
+            Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content   >
+
+        <!--用户完善信息页面主要内容区-->
+
+        <div class="yourPhoto">
+            <p class="photoBor"><a><img src="img/photo/ben.png"/></a></p>
+            <p class="nickName">Bevery</p>
+        </div>
+        <div class="yourInformation">
+            <form id="inforForm2">
+                <div class="list">
+                    <label class="item item-input borderB">
+                        <span class="input-label colorB" >邮箱</span>
+                        <input type="text" placeholder="1122@redy.com" id="otherInforEmail">
+                    </label>
+                    <div class="posRl">
+                    <label class="item item-input borderB " >
+                        <span class="input-label colorB" >验证码</span>
+                        <input type="text" placeholder="" >
+                    </label>
+                    <span class="posAbo">
+                           <button class="youCode" ng-click="inforEmlCode()">发送验证码</button>
+                    </span>
+                    </div>
+
+                    <label class="item item-input borderB">
+                        <span class="input-label colorB" >电话</span>
+                        <input type="text" placeholder="" id="otherInforTel">
+                    </label>
+                    <div class="posRl">
+                    <label class="item item-input borderB " >
+                        <span class="input-label colorB" >验证码</span>
+                        <input type="text" placeholder="">
+                    </label>
+                    <span class="posAbo">
+                           <button class="youCode" ng-click="inForMsgCode()">发送短信</button>
+                    </span>
+                    </div>
+                    <label class="item item-input borderB">
+                        <span class="input-label colorB mustBg" >邮编</span>
+                        <input type="text" placeholder="610000">
+                    </label>
+                    <label class="item item-input borderB">
+                        <span class="input-label colorB" >姓</span>
+                        <input type="text" placeholder="">
+                    </label>
+                    <label class="item item-input borderB">
+                        <span class="input-label colorB" >名</span>
+                        <input type="text" placeholder="">
+                    </label>
+
+                </div>
+            </form>
+        </div>
+        <div class="nextBtn">
+            <a class="button button-block button-balanced subStyle"  type="submit" ng-disabled="canClick" href="#/imInformation1">提交</a>
+        </div>
+    </ion-content>
+</ion-view>
+

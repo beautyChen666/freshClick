@@ -1,0 +1,45 @@
+.handDeliverGoods,.orderInformation{
+    background-color: #F4F4F4;
+}
+.handDeliverGoodsMain .item{
+    border: none;
+    padding: 0.1rem;
+    box-sizing: content-box;
+    box-shadow:0px 0px 3px 1px #e6e4e4;
+    margin-bottom: 0.2rem;
+    border-radius: 0.03rem;
+}
+.handDeliverGoodsHeader .item{
+    -webkit-border-radius:0.2rem;
+    -moz-border-radius:0.2rem;
+    background-color: #E9E9E8;
+    padding:5px;
+}
+.handDeliverGoodsList{
+    padding: 0.072rem 0;
+    border-bottom: 1px solid #bcbcbc;
+}
+.handDeliverGoodsHeader .list{
+    margin: 0;
+    width: 100%;
+    border-radius:0.2rem;
+}
+.handDeliverGoodsList.noBoreder{
+    border: none;
+    padding-top: 0.1rem;
+}
+.isSendSmall{  /*确认发货小按钮*/
+    width: 0.6rem;
+    text-align: center;
+    color: #fff;
+    background-color: #85AF41;
+    line-height: 0.3rem;
+    border-radius: 0.2rem;
+    font-size: 15px;
+}
+.isSendSmall>span{
+    margin: 0 auto;
+}
+.waitingForSendingFt{
+    color: #FEBC6A;
+}

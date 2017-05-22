@@ -1,0 +1,41 @@
+<ion-view view-title="回复" class="reply-comment">
+    <ion-nav-bar class="bar-stable">
+        <ion-nav-back-button ng-click="goBack()">
+            Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content scroll="false" class="isProScroll ">
+        <div class="psr ">
+            <div class="setWidHei">
+                <ion-scroll scrollbar-y="false"
+                                    class="scrollRe"
+                                    delegate-handle="replymainScroll">
+                    <ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh()"></ion-refresher>
+                    <!--评论-->
+                    <div class="reply-list">
+                        <div class="title">
+                            <img src="img/shopHome/default_head.png" ng-src="{{comMsg.user.consumerInfo.userImgUrl}}" onerror="javascript:this.src='img/shopHome/default_head.png';">
+                            <span>{{comMsg.user.consumerInfo.nickname}}</span>
+                        </div>
+                        <div class="reply-content"><span>{{comMsg.commentContent}}</span></div>
+                        <p>{{comMsg.commentTime}}</p>
+                    </div>
+                    <!--回复-->
+                    <div class="reply-list" ng-repeat="oneMsg in allReplyMsg">
+                        <div class="title">
+                            <img src="img/shopHome/default_head.png" ng-src="{{oneMsg.user.consumerInfo.userImgUrl}}" onerror="javascript:this.src='img/shopHome/default_head.png';">
+                            <span>{{oneMsg.user.consumerInfo==(null||undefined)?oneMsg.user.supplierInfo.nickname:oneMsg.user.consumerInfo.nickname}}</span>
+                            <!--<span>{{oneMsg.user.consumerInfo.nickname||oneMsg.user.supplierInfo.nickname}}</span>-->
+                        </div>
+                        <div class="reply-content"><span>{{oneMsg.replyComment}}</span></div>
+                        <p>{{oneMsg.replyTime}}</p>
+                    </div>
+                </ion-scroll>
+            </div>
+            <div class="mySendForm">
+                <input class="msgInput" id="padLef" type="text"/>
+                <a type="button" ng-click="sendReplyMsg()" class="sendMsgBtn">回 复</a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

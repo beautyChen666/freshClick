@@ -1,0 +1,32 @@
+<!-- 消息中心-->
+<ion-view class="news-center" view-title="消息中心">
+    <ion-nav-bar class="bar-stable">
+        <ion-nav-back-button >
+            Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content class="news-content">
+        <div class="private-mesg" ng-click="privateMesg()">
+            <img src="img/myShop/private_meg.png" alt="">
+            <div>
+                <h5>私信</h5>
+                <p>点击查看私信</p>
+            </div>
+        </div>
+        <div class="comment" ng-click="toComments()">
+            <img src="img/myShop/comments.png" alt="">
+            <div>
+                <h5>评论</h5>
+                <p>点击查看评论</p>
+            </div>
+
+        </div>
+        <div class="orders-mesg" ng-click="ordersMesg()">
+            <img src="img/myShop/orders_meg.png" alt="">
+            <div>
+                <h5>订单信息</h5>
+                <p>点击查看订单信息</p>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

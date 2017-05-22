@@ -1,0 +1,109 @@
+
+<ion-view  view-title="{{openShopTitle}}"> <!--头部title-->
+    <ion-nav-bar class="bar-stable">
+        <ion-nav-back-button >
+            Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+
+    <ion-side-menus>
+        <ion-pane ion-side-menu-content scroll="true">
+            <ion-nav-view name="menuContent" view-title="开店信息" animation="slide-right-left">
+                <ion-nav-bar class="bar-stable">
+                    <ion-nav-back-button>
+                        Back
+                    </ion-nav-back-button>
+                </ion-nav-bar>
+
+                <ion-content class="OpenShopContent has-footer"  scroll="true">
+                    <form name="OpenShopForm" id="OpenShopForm" role="form"  ng-submit="OpenShopNow()" >
+                        <div class="list list-inset"> <!--开单信息列表-->
+                            <label class="item item-input">  <!--店铺名称-->
+                                <p class="mustWrap">
+                                <span class="OStitle">店铺名称</span>&nbsp;
+                                <span  ><img src="img/icons/start.png" alt="loading..."></span></p>
+                                <input type="text" name="storeName" ng-model="storeName" id="storeName" ng-blur="loseBlurName($event)" required />
+                            </label>
+
+                            <label class="item item-input">  <!--姓名-->
+                                <p class="mustWrap">
+                                <span class="OStitle">负责人姓名</span>&nbsp;
+                                <span  ><img src="img/icons/start.png" alt="loading..."></span></p>
+                                <input type="text" name="storekeeperName" ng-model="storekeeperName"  id="storekeeperName" ng-keyup="loseBlur($event)"required />
+                            </label>
+
+                            <label class="item item-input pr"  ng-click="goChangeDetails('email')"> <!--邮箱-->
+                                <p class="mustWrap">
+                                <span>邮箱</span>&nbsp;
+                                <span ><img src="img/icons/start.png" alt="loading..."></span></p>
+                                <span id="OpenShopEmail" name="OpenShopEmail" ng-model="OpenShopEmail">{{OpenShopEmail}}</span>
+                                <span class="forClickInputChange"><i class="icon ion-chevron-right"></i>&nbsp;&nbsp;</span>
+                            </label>
+
+                            <label class="item item-input pr"  ng-click="goChangeDetails('tel')"> <!--电话-->
+                                <p class="mustWrap"><span class="input-label" >电话</span></p>
+                                <span id="OpenShopTell" ng-model="OpenShopTell">{{OpenShopTell}}</span>
+                                <span class="forClickInputChange"><i class="icon ion-chevron-right"></i>&nbsp;&nbsp;</span>
+                            </label>
+
+                            <label class="item item-input pr" ng-click="toggleLeftSideMenu()"> <!--所卖商品-->
+                                <p class="mustWrap">
+                                <span class="input-label">所卖分类</span></p>
+                                <span id="productCategoryList"  ng-model="productCategoryListContent" style="font-size: 13px">{{productCategoryListContent}}</span>
+                                <span  class="forClickInputChange"><i class="icon ion-chevron-right"></i>&nbsp;&nbsp;</span>
+                            </label>
+
+                            <label class="item item-input"> <!--地址-->
+                                <p class="mustWrap"> <span class="input-label">州</span></p>
+                                <input type="text" id="state">
+                            </label>
+                            <label class="item item-input"> <!--地址-->
+                                <p class="mustWrap"> <span class="input-label">城市</span></p>
+                                <input type="text" id="city">
+                            </label>
+                            <label class="item item-input"> <!--地址-->
+                                <p class="mustWrap"><span class="input-label">街名1</span></p>
+                                <input type="text" id="streetOne">
+                            </label>
+                            <label class="item item-input"> <!--地址-->
+                                <p class="mustWrap"><span class="input-label">街名2</span></p>
+                                <input type="text" id="streetTwo">
+                            </label>
+                            <p style="text-align: right">
+                                <span class="waIn">*此地址为送货起点</span>
+                            </p>
+                            <label class="item item-input">  <!--店铺描述-->
+                                <textarea name="" id="storeDetail" cols="63" rows="3" placeholder="店铺描述5-300个字" style="resize:none;" maxlength='300'></textarea>
+                            </label>
+                            <label class="item imgUp" style="border: none" ng-click="uploadImgs()">  <!--上传图片-->
+                                <img ng-src="{{initSrc||img/OpenShop/photo.png}}" alt="" style="width: 60px" >
+                            </label>
+                            <div style="text-align: center">
+                                <button id="OpenShop" type="submit" class="button button-balanced pr" ng-disabled="canClick1||canClick2||canClick3">{{openShopValue}}</button>
+                            </div>
+                        </div>
+                    </form>
+                </ion-content>
+            </ion-nav-view>
+        </ion-pane>
+
+        <ion-side-menu side="right" class="openShopSide"> <!--侧导航设置-->
+            <header class="bar bar-header bar-stable pr">
+                <h1 class="title"><a menu-close style=" position:absolute;left: 3%;"> <i class="icon ion-chevron-left"></i> </a>所卖产品</h1>
+            </header>
+            <ion-content class="has-header">
+                <ul>  <!--侧导航列表-->
+                    <li class="item item-checkbox" ng-repeat="item in productCategoryListDatas track by $index">
+                        <label class="checkbox">
+                            <input type="checkbox" class="productListCheck">
+                        </label>
+                        <span class="OpenShopCheckbox">{{item.categoryName}}</span>
+                    </li>
+                </ul>
+                <div style="text-align: center;margin-top:40px">
+                    <button style="width:150px;border-radius: 20px" menu-close  class="button button-balanced pr" ng-click="getProductCategory()">确定</button>
+                </div>
+            </ion-content>
+        </ion-side-menu>
+    </ion-side-menus>
+</ion-view>

@@ -1,0 +1,39 @@
+<ion-view view-title="数据统计">
+    <ion-nav-bar class="bar-stable" >
+        <ion-nav-back-button icon="ios">
+            Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content scroll="true" class="bgGray">
+        <div class="stateAndPic1">
+            <div class="picTitle">销售金额环形图</div>
+            <div class="stateWrap">
+                <div class="choseState" id="chooseChartOfSales">
+                    <p class="nowState" ng-click="goNowSells(0,9)">全部</p>
+                    <p ng-click="goNowSells(1,2)">当年</p>
+                    <p ng-click="goNowSells(2,1)">当月</p>
+                    <p ng-click="goNowSells(3,0)">当日</p>
+                </div>
+            </div>
+            <div class="dountChartP">
+                <canvas class="canDount" id="canDountO">
+                </canvas>
+            </div>
+        </div>
+        <div class="stateAndPic2">
+            <div class="picTitle">销售金额线性图</div>
+            <div  class="stateWrap">
+                <div class="choseState" id="chooseLineOfSales">
+                    <p   class="nowState" ng-click="goEveSells(0,0)">日统计</p>
+                    <p ng-click="goEveSells(1,1)">月统计</p>
+                    <p ng-click="goEveSells(2,2)">年统计</p>
+                </div>
+            </div>
+            <div class="curveChartP" scroll="true" on-swipe-right="goRight()" on-swipe-left="goLeft()" >
+                <canvas class="canCurve" id="canLineO">
+                </canvas>
+            </div>
+
+        </div>
+    </ion-content>
+</ion-view>

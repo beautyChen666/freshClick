@@ -1,0 +1,21 @@
+<!-- 设置-->
+<ion-view class="set-up" view-title="设置">
+    <ion-nav-bar class="bar-stable">
+        <ion-nav-back-button>
+            Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>
+        <div class="default-bg"></div>
+        <div class="remind item-toggle">
+            <span>推送通知提醒</span>
+            <label class="toggle" style="margin-top: 5px">
+                <input type="checkbox" ng-click="isOpenTo($event)" id="isOpen">
+                <div class="track">
+                    <div class="handle"></div>
+                </div>
+            </label>
+        </div>
+        <!--<div class="clear-up"><span>清除缓存</span><span>1.2M</span></div>-->
+    </ion-content>
+</ion-view>

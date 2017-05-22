@@ -1,0 +1,134 @@
+.myShopContent{
+    /*padding-left:0.14rem;*/
+    /*padding-right:0.15rem;*/
+}
+.myShopConH{
+     margin: 0 auto;
+    line-height: 0.42rem;
+    border-bottom: 1px solid #dddddd;
+    font-size: 0.16rem;
+    color:#555852;
+    /*margin-bottom: 0.10rem;*/
+}
+.myShopConH p{
+    text-align: center;
+}
+.ellipsis-3l {
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;    /* 数值代表显示几行 */
+    -webkit-box-orient: vertical;
+}
+.ellipsis-1l{
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;    /* 数值代表显示几行 */
+    -webkit-box-orient: vertical;
+}
+.myShopList{
+    width: 100%;
+}
+.myShopAbt{
+    width:95%;
+    height:1.10rem;
+    margin: 10px auto;
+    background: #99ca47;
+    border-radius: 0.1rem;
+    box-shadow:0 0.03rem  0.03rem #bdead7;
+    -webkit-box-shadow:0 0.03rem  0.03rem #bdead7;
+    -moz-box-shadow:0 0.03rem  0.03rem #bdead7;
+    -ms-box-shadow:0 0.03rem  0.03rem #bdead7;
+}
+.myShopLeft{
+    width:0.77rem;
+    padding:0.26rem 0.15rem;
+}
+.myShopLeft img{
+    width:0.6rem;
+    height:0.6rem;
+    border-radius: 0.3rem;
+}
+.myShopMid{
+    width:1.66rem;
+    height:100%;
+    color:#FFFFFF;
+    font-size:0.1rem;
+
+}
+.shopName{
+    padding-top:0.11rem;
+    font-size: 0.16rem;
+    height:0.4rem;
+}
+.shopPopularity{
+    height:0.2rem;
+    border-bottom: 1px solid #FFFFFF;
+}
+.eyeBg{
+    display: inline-block;
+    width:0.95rem;
+    padding-left: 0.2rem;
+    background: url("../img/myShop/eyeCopy@3x.png") no-repeat 0.02rem 0.04rem;
+    background-size: 0.13rem 0.09rem;
+}
+.msgBg{
+    display: inline-block;
+    width:0.71rem;
+    padding-left: 0.2rem;
+    background: url("../img/myShop/fill190Copy@3x.png") no-repeat 0rem 0.04rem;
+    background-size: 0.13rem 0.09rem;
+}
+.myShopRight{
+    width:0.48rem;
+    height:100%;
+    padding-top:0.43rem;
+    padding-left:0.17rem;
+}
+.myShopRight img{
+    width:0.2rem;
+    height:0.2rem;
+    border-radius: 0.1rem;
+}
+/*添加*/
+
+.myShopAddOne{
+    width:95%;
+    height:1.10rem;
+    background: #d6d7d4;
+    margin: 10px auto;
+    /*margin-bottom: 0.10rem;*/
+    border-radius: 0.1rem;
+    padding:0.1rem 1.16rem 0 1.16rem;
+    color:#99ca47;
+}
+.myShopAddOne p{
+    width:0.58rem;
+    height:0.27rem;
+    text-align: center;
+}
+.myShopAddOne a{
+    display: inline-block;
+    width:0.59rem;
+}
+.myShopAddOne a img{
+    width:0.58rem;
+    height:0.58rem;
+}
+
+.myScorllShop{
+    height:4.9rem;
+}
+/*.scroll{*/
+    /*height:100%;*/
+/*}*/
+.button.button-balanced{
+    background-color: #85af41;
+}
+
+
+.scroll-view.scroll-y{
+    overflow-x: hidden;
+     overflow-y: hidden;
+}

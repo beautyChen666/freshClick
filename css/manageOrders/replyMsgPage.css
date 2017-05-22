@@ -1,0 +1,76 @@
+.oneMsgInfor{
+    width:100%;
+    min-height:0.8rem;
+    height:auto!important;height:0.8rem;
+    padding:0 0.15rem;
+}
+.oneMsgInfor:after{content:".";display:block;height:0;clear:both;overflow:hidden;visibility:hidden;}
+.oneMsgInfor p:nth-of-type(1){
+    height:0.22rem;
+    text-align: center;
+    color:#ababab;
+}
+.oneMsgInfor div{
+    height:0.4rem;
+    line-height: 0.4rem;
+    font-size: 0.12rem;
+
+}
+.oneMsgInfor div P:nth-of-type(1){
+    padding:0.01rem;
+    width:0.4rem;
+    height:0.4rem;
+}
+.oneMsgInfor div img{
+    width:0.38rem;
+    height:0.38rem;
+    border-radius: 0.19rem;
+}
+.msgCont{
+    padding-left:0.4rem;
+    width:100%;
+    min-height:0.2rem;
+    line-height: 0.15rem;
+    height:auto!important;height:0.2rem;
+}
+.mySendForm{
+    width:3.2rem;
+    height:0.42rem;
+    padding:0.05rem 0.12rem;
+    display: flex;
+    border-top:1px solid #8f8f8f;
+    position: absolute;
+    left:0;
+    bottom: 0;
+    background: #e3dfd9;
+
+}
+.msgInput{
+    flex:4;
+    padding:0;
+    border:1px solid #8f8f8f;
+    border-radius: 0.15rem;
+    margin-right: 0.05rem;
+}
+#padLef{
+    padding-left:0.15rem;
+}
+.sendMsgBtn{
+    flex:1;
+    height:0.3rem;
+    background: #f7aa2a;
+    border-radius: 0.15rem;
+    color:#FFFFFF;
+    text-align: center;
+    line-height: 0.3rem;
+    font-size: 0.12rem;
+
+}
+.psr{
+    height:100%;
+    width:100%;
+    position: relative;
+}
+.scrollRe{
+    height:4.8rem;
+}

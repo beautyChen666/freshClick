@@ -1,0 +1,32 @@
+.mustWrap{
+    width:0.9rem;
+    font-size:0.14rem;
+    height:0.35rem;
+}
+.mustWrap span{
+    font-size: 0.12rem;
+    line-height: 0.34rem;
+}
+.mustWrap img{
+    display: inline-block;
+}
+.comBankCard{
+    width:100%;
+    padding-top:0.8rem;
+}
+.comBankCard button{
+    border:0;
+    display: block;
+    width:1.2rem;
+    height:0.4rem;
+    font-size: 0.16rem;
+    line-height: 0.4rem;
+    color: #ffffff;
+    text-align: center;
+    background: #85af41;
+    border-radius: 0.2rem;
+    margin-left:1rem;
+}
+.comBankCard button[disabled]{
+    opacity: 0.5;
+}

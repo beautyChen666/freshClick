@@ -1,0 +1,87 @@
+<ion-view >
+    <ion-header-bar align-title="center" class="productDetailsHomeHeader">
+        <div class="buttons">
+            <a class="button" ng-click="ionicGoBack()" ><i class="ion ion-ios-arrow-back" style="font-size: 20px"></i></a>
+        </div>
+        <h1 class="title">路线详情</h1>
+    </ion-header-bar>
+    <ion-content class="detailsOnLine padding">
+        <div class="detailsOnLineMap"></div>
+        <div class="tabs" style="background: #85AF41">
+            <a class="tab-item pr">
+                <img src="img/Map/place.png" alt="loding..." class="pa">
+                <span class="waitingDisFt" ng-class="{true: 'dolDisActive'}[tabsToggle]"  ng-click="showBaseDetailsUl()">基本信息</span>
+            </a>
+            <a class="tab-item pr">
+                <img src="img/Map/website.png" alt="loding..." class="pa">
+                <span class="waitingDisFt"  ng-class="{false: 'dolDisActive'}[tabsToggle]"  ng-click="showDistributionDetailsUl()">配送点信息</span>
+            </a>
+        </div>
+        <div class="padding toggleDiv">
+            <ul class="list baseDetailsUl"  ng-show="tabsToggle">
+                <li >
+                    <label class="item item-input">
+                        <span class="input-label">路线名称<img src="img/icons/start.png" alt="" class="dlb"></span>
+                        <input type="text" placeholder="请输入好听的配送路线名称" ng-model="routeName" value={{routeName}} id="routeName" ng-maxlength="20">
+                    </label>
+                </li>
+                <li >
+                    <label class="item item-input">
+                        <span class="input-label">送货距离<img src="img/icons/start.png" alt="" class="dlb"></span>
+                        <input type="text" placeholder="请输入送货距离" ng-model="maxDistance" value={{maxDistance}} id="routeDistance" ng-blur="patternFno()" />
+                        <span>mile</span>
+                    </label>
+                </li>
+                <li>
+                    <label class="item item-input">
+                        <span class="input-label">送货下限<img src="img/icons/start.png" alt="" class="dlb"></span>
+                        <input type="text" placeholder="请输入本次最低送货金额，比如￥1000" ng-model="minAmount" value={{minAmount}} id="minAmount" ng-blur="patternFn()" />
+                        <span>$</span>
+                    </label>
+                </li>
+                <li class="item item-toggle">
+                    路线状态
+                    <label class="toggle toggle-assertive">
+                        <input type="checkbox" ng-click="stateNow(a)" ng-model="a" ng-checked="isOpen">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </li>
+            </ul>
+            <ul class="list distributionDetailsUl" ng-hide="tabsToggle">
+                <li class="row">
+                    <div class="col settingsDis" ng-click="goAllDistributionsSites()"> <i class="ion-android-settings" style="font-size: 0.15rem;color: #4cd964;"></i> 配送点编辑</div>
+                </li>
+                <li class="item row" style="border-top: none;" ng-repeat="data in detailsOnLineNowDatas track by $index">
+                    <div class="col"><span class="smallBall dlb">{{$index+1}}</span></div>
+                    <div class="col col-60">{{data.allocationName}}</div>
+                    <div class="col"><a class="OISmallBtn" ng-click="showMeaningOrder($index)">调序</a></div>
+                </li>
+            </ul>
+        </div>
+    </ion-content>
+    <ion-footer-bar class="bar bar-footer detailsOnLineFooter">
+        <div class="wAll">
+            <a class="aBtnBig" ng-click="submitLineDetails()">提交</a>
+        </div>
+    </ion-footer-bar>
+
+    <script id="meaningOrder.html" type="text/ng-template">
+        <div class="conAlertBg pr">
+            <a type="button" class="pa conClose" ng-click="closeMeaningOrder()">
+                <i class="ion ion-close ion-arrow-right"></i>
+            </a>
+        </div>
+        <div>
+            <p class="tc conP">站点{{sortNum}}:{{sortAddress}}</p>
+            <div class="changeNumDiv">
+                <span>调整排序</span>
+                <input name="number" type="tel" id="DPLinput" placeholder="输入数字表示想要排的顺序,如8" />
+            </div>
+            <div>
+                <a type="button" class="aBtnBig OIbtn" ng-click="isMeaningOrder()">确定</a>
+            </div>
+        </div>
+    </script>
+</ion-view>
